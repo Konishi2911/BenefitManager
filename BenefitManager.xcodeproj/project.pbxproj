@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24608D024869DBD00686B13 /* XibInstaceable.swift */; };
+		B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7982487087E00CF21A1 /* StatisticsViewController.swift */; };
+		B255C79C248708BE00CF21A1 /* StatisticsViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */; };
+		B255C79F248709D000CF21A1 /* JournalViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79E248709D000CF21A1 /* JournalViewLayout.xib */; };
+		B255C7A1248709E500CF21A1 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7A0248709E500CF21A1 /* JournalViewController.swift */; };
+		B255C7A42487165D00CF21A1 /* ItemEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C7A32487165D00CF21A1 /* ItemEditorWindow.xib */; };
+		B255C7A52487165D00CF21A1 /* ItemEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C7A32487165D00CF21A1 /* ItemEditorWindow.xib */; };
+		B255C7A72487382400CF21A1 /* ItemEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7A62487382400CF21A1 /* ItemEditorViewController.swift */; };
+		B255C7A82487382400CF21A1 /* ItemEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7A62487382400CF21A1 /* ItemEditorViewController.swift */; };
+		B255C7AA24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7A924873A6200CF21A1 /* ItemEditorWindowController.swift */; };
+		B255C7AB24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7A924873A6200CF21A1 /* ItemEditorWindowController.swift */; };
+		B255C7B02487480D00CF21A1 /* TransactionDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7AF2487480D00CF21A1 /* TransactionDataBase.swift */; };
+		B255C7B12487480D00CF21A1 /* TransactionDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7AF2487480D00CF21A1 /* TransactionDataBase.swift */; };
+		B255C7B42487486E00CF21A1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7B32487486E00CF21A1 /* Transaction.swift */; };
+		B255C7B52487486F00CF21A1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7B32487486E00CF21A1 /* Transaction.swift */; };
+		B255C7B72487523600CF21A1 /* AccountsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7B62487523600CF21A1 /* AccountsTitle.swift */; };
+		B255C7B82487523600CF21A1 /* AccountsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7B62487523600CF21A1 /* AccountsTitle.swift */; };
+		B26DBB662488615F00661B1C /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB652488615F00661B1C /* PaymentMethod.swift */; };
+		B26DBB682488622B00661B1C /* FileImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB672488622B00661B1C /* FileImportable.swift */; };
+		B26DBB6B2488628000661B1C /* IFileExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB6A2488628000661B1C /* IFileExportable.swift */; };
+		B26DBB802488834000661B1C /* ImportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB7F2488834000661B1C /* ImportData.swift */; };
+		B26DBB832488834C00661B1C /* FileImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB812488834C00661B1C /* FileImporter.swift */; };
+		B26DBB842488834C00661B1C /* FileExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB822488834C00661B1C /* FileExporter.swift */; };
 		B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29049D524855E7200DA9569 /* AppDelegate.swift */; };
 		B29049D824855E7500DA9569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29049D724855E7500DA9569 /* Assets.xcassets */; };
 		B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29049D924855E7500DA9569 /* MainWindow.xib */; };
@@ -52,6 +74,22 @@
 
 /* Begin PBXFileReference section */
 		B24608D024869DBD00686B13 /* XibInstaceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInstaceable.swift; sourceTree = SOURCE_ROOT; };
+		B255C7982487087E00CF21A1 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsViewLayout.xib; sourceTree = SOURCE_ROOT; };
+		B255C79E248709D000CF21A1 /* JournalViewLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalViewLayout.xib; sourceTree = "<group>"; };
+		B255C7A0248709E500CF21A1 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		B255C7A32487165D00CF21A1 /* ItemEditorWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemEditorWindow.xib; sourceTree = "<group>"; };
+		B255C7A62487382400CF21A1 /* ItemEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorViewController.swift; sourceTree = "<group>"; };
+		B255C7A924873A6200CF21A1 /* ItemEditorWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorWindowController.swift; sourceTree = "<group>"; };
+		B255C7AF2487480D00CF21A1 /* TransactionDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionDataBase.swift; path = BenefitManager/TransactionManagement/TransactionDataBase.swift; sourceTree = SOURCE_ROOT; };
+		B255C7B32487486E00CF21A1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B255C7B62487523600CF21A1 /* AccountsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsTitle.swift; sourceTree = "<group>"; };
+		B26DBB652488615F00661B1C /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		B26DBB672488622B00661B1C /* FileImportable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileImportable.swift; sourceTree = "<group>"; };
+		B26DBB6A2488628000661B1C /* IFileExportable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFileExportable.swift; sourceTree = "<group>"; };
+		B26DBB7F2488834000661B1C /* ImportData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
+		B26DBB812488834C00661B1C /* FileImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileImporter.swift; sourceTree = "<group>"; };
+		B26DBB822488834C00661B1C /* FileExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExporter.swift; sourceTree = "<group>"; };
 		B29049D224855E7200DA9569 /* BenefitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenefitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29049D524855E7200DA9569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29049D724855E7500DA9569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +146,57 @@
 			path = MainWindow;
 			sourceTree = "<group>";
 		};
+		B255C79A2487089300CF21A1 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */,
+				B255C7982487087E00CF21A1 /* StatisticsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		B255C79D248709B800CF21A1 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				B255C79E248709D000CF21A1 /* JournalViewLayout.xib */,
+				B255C7A0248709E500CF21A1 /* JournalViewController.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		B255C7A22487162C00CF21A1 /* ItemEditor */ = {
+			isa = PBXGroup;
+			children = (
+				B255C7A32487165D00CF21A1 /* ItemEditorWindow.xib */,
+				B255C7A62487382400CF21A1 /* ItemEditorViewController.swift */,
+				B255C7A924873A6200CF21A1 /* ItemEditorWindowController.swift */,
+			);
+			path = ItemEditor;
+			sourceTree = "<group>";
+		};
+		B255C7B22487485300CF21A1 /* TransactionManagement */ = {
+			isa = PBXGroup;
+			children = (
+				B255C7AF2487480D00CF21A1 /* TransactionDataBase.swift */,
+				B255C7B62487523600CF21A1 /* AccountsTitle.swift */,
+				B255C7B32487486E00CF21A1 /* Transaction.swift */,
+				B26DBB652488615F00661B1C /* PaymentMethod.swift */,
+			);
+			path = TransactionManagement;
+			sourceTree = "<group>";
+		};
+		B26DBB692488623D00661B1C /* FileIO */ = {
+			isa = PBXGroup;
+			children = (
+				B26DBB6A2488628000661B1C /* IFileExportable.swift */,
+				B26DBB672488622B00661B1C /* FileImportable.swift */,
+				B26DBB822488834C00661B1C /* FileExporter.swift */,
+				B26DBB812488834C00661B1C /* FileImporter.swift */,
+				B26DBB7F2488834000661B1C /* ImportData.swift */,
+			);
+			path = FileIO;
+			sourceTree = "<group>";
+		};
 		B29049C924855E7200DA9569 = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +223,15 @@
 				B24608D024869DBD00686B13 /* XibInstaceable.swift */,
 				B29049D524855E7200DA9569 /* AppDelegate.swift */,
 				B29049D724855E7500DA9569 /* Assets.xcassets */,
+				B255C7B22487485300CF21A1 /* TransactionManagement */,
+				B26DBB692488623D00661B1C /* FileIO */,
 				B24608CD24868A4800686B13 /* MainWindow */,
 				B2904A232485F57800DA9569 /* MenuTableItem */,
 				B2904A0D2485658300DA9569 /* Charts */,
 				B2904A0C2485656C00DA9569 /* Overview */,
+				B255C79A2487089300CF21A1 /* Statistics */,
+				B255C79D248709B800CF21A1 /* Journal */,
+				B255C7A22487162C00CF21A1 /* ItemEditor */,
 				B29049DC24855E7500DA9569 /* Info.plist */,
 				B29049DD24855E7500DA9569 /* BenefitManager.entitlements */,
 			);
@@ -292,7 +386,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255C79F248709D000CF21A1 /* JournalViewLayout.xib in Resources */,
 				B29049D824855E7500DA9569 /* Assets.xcassets in Resources */,
+				B255C79C248708BE00CF21A1 /* StatisticsViewLayout.xib in Resources */,
+				B255C7A42487165D00CF21A1 /* ItemEditorWindow.xib in Resources */,
 				B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */,
 				B2904A1C2485F48A00DA9569 /* MenuTableItemView.xib in Resources */,
 				B2904A0024855EEA00DA9569 /* OverviewViewLayout.xib in Resources */,
@@ -312,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2904A1E2485F48A00DA9569 /* MenuTableItemView.xib in Resources */,
+				B255C7A52487165D00CF21A1 /* ItemEditorWindow.xib in Resources */,
 				B2904A0124855EEA00DA9569 /* OverviewViewLayout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,8 +422,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */,
+				B255C7A1248709E500CF21A1 /* JournalViewController.swift in Sources */,
+				B26DBB842488834C00661B1C /* FileExporter.swift in Sources */,
 				B2904A032485622100DA9569 /* CircleChartView.swift in Sources */,
 				B2904A2D2486817500DA9569 /* MainWindowController.swift in Sources */,
+				B26DBB802488834000661B1C /* ImportData.swift in Sources */,
+				B255C7A72487382400CF21A1 /* ItemEditorViewController.swift in Sources */,
+				B26DBB832488834C00661B1C /* FileImporter.swift in Sources */,
+				B255C7B42487486E00CF21A1 /* Transaction.swift in Sources */,
+				B255C7AA24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */,
+				B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */,
+				B26DBB682488622B00661B1C /* FileImportable.swift in Sources */,
+				B255C7B72487523600CF21A1 /* AccountsTitle.swift in Sources */,
+				B26DBB662488615F00661B1C /* PaymentMethod.swift in Sources */,
+				B26DBB6B2488628000661B1C /* IFileExportable.swift in Sources */,
+				B255C7B02487480D00CF21A1 /* TransactionDataBase.swift in Sources */,
 				B2904A0F2485B93600DA9569 /* MainViewController.swift in Sources */,
 				B2904A072485627100DA9569 /* OverviewViewController.swift in Sources */,
 				B2904A202485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
@@ -337,7 +448,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255C7B82487523600CF21A1 /* AccountsTitle.swift in Sources */,
+				B255C7B52487486F00CF21A1 /* Transaction.swift in Sources */,
 				B29049E724855E7500DA9569 /* BenefitManagerTests.swift in Sources */,
+				B255C7B12487480D00CF21A1 /* TransactionDataBase.swift in Sources */,
 				B2904A042485622100DA9569 /* CircleChartView.swift in Sources */,
 				B2904A102485B93600DA9569 /* MainViewController.swift in Sources */,
 				B2904A082485627100DA9569 /* OverviewViewController.swift in Sources */,
@@ -349,9 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255C7A82487382400CF21A1 /* ItemEditorViewController.swift in Sources */,
 				B29049F224855E7500DA9569 /* BenefitManagerUITests.swift in Sources */,
 				B2904A052485622100DA9569 /* CircleChartView.swift in Sources */,
 				B2904A112485B93600DA9569 /* MainViewController.swift in Sources */,
+				B255C7AB24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */,
 				B2904A092485627100DA9569 /* OverviewViewController.swift in Sources */,
 				B2904A222485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
 			);
