@@ -30,6 +30,7 @@
 		B26DBB802488834000661B1C /* ImportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB7F2488834000661B1C /* ImportData.swift */; };
 		B26DBB832488834C00661B1C /* FileImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB812488834C00661B1C /* FileImporter.swift */; };
 		B26DBB842488834C00661B1C /* FileExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB822488834C00661B1C /* FileExporter.swift */; };
+		B26DBB862489BAAA00661B1C /* ItemEditorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */; };
 		B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29049D524855E7200DA9569 /* AppDelegate.swift */; };
 		B29049D824855E7500DA9569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29049D724855E7500DA9569 /* Assets.xcassets */; };
 		B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29049D924855E7500DA9569 /* MainWindow.xib */; };
@@ -90,6 +91,7 @@
 		B26DBB7F2488834000661B1C /* ImportData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportData.swift; sourceTree = "<group>"; };
 		B26DBB812488834C00661B1C /* FileImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileImporter.swift; sourceTree = "<group>"; };
 		B26DBB822488834C00661B1C /* FileExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExporter.swift; sourceTree = "<group>"; };
+		B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorViewDelegate.swift; sourceTree = "<group>"; };
 		B29049D224855E7200DA9569 /* BenefitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenefitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29049D524855E7200DA9569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29049D724855E7500DA9569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				B255C7A32487165D00CF21A1 /* ItemEditorWindow.xib */,
 				B255C7A62487382400CF21A1 /* ItemEditorViewController.swift */,
 				B255C7A924873A6200CF21A1 /* ItemEditorWindowController.swift */,
+				B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */,
 			);
 			path = ItemEditor;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				B2904A0F2485B93600DA9569 /* MainViewController.swift in Sources */,
 				B2904A072485627100DA9569 /* OverviewViewController.swift in Sources */,
 				B2904A202485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
+				B26DBB862489BAAA00661B1C /* ItemEditorViewDelegate.swift in Sources */,
 				B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
