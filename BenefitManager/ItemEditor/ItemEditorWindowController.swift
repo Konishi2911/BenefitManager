@@ -13,6 +13,9 @@ class ItemEditorWindowController: NSWindowController {
     var dataBaseName: String = ""
     var recordNumber: Int = -1
     
+    var caller: ItemEditorViewDelegate?
+    var newRecord: Transaction?
+    
     override func windowDidLoad() {
         super.windowDidLoad()
     }

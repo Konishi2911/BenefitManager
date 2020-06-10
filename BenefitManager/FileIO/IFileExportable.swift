@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IFileExportalbe {
-    func makeFileString() -> String
+    func makeExportingDataSet() -> ExportingDataSet
 }

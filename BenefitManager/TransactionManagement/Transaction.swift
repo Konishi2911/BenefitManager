@@ -18,7 +18,7 @@ struct Transaction {
     var remarks: String = ""
     
     // Add variables to this enum when new variables are added
-    enum variables: String {
+    enum variables: String, CaseIterable {
         case accountsTitle
         case date
         case name
@@ -26,6 +26,14 @@ struct Transaction {
         case amounts
         case paymentMethod
         case remarks
+        
+        static func getElements() -> [String] {
+            var temp: [String] = []
+            for element in variables.allCases {
+                temp.append(element.rawValue)
+            }
+            return temp
+        }
     }
     
     let dateFormatter: DateFormatter = .init()
@@ -51,20 +59,20 @@ struct Transaction {
 }
 
 extension Transaction: IFileExportalbe {
-    func makeFileString() -> String {
-        var fileStr: String = ""
-
-        fileStr += "##" + String(describing: type(of: self)) + "\r\n"
-        fileStr += variables.accountsTitle.rawValue + accountsTitle.string() + "\r\n"
-        fileStr += variables.date.rawValue + dateFormatter.string(from: date) + "\r\n"
-        fileStr += variables.name.rawValue + name + "\r\n"
-        fileStr += variables.pieces.rawValue + String(pieces) + "\r\n"
-        fileStr += variables.amounts.rawValue + String(amounts) + "\r\n"
-        fileStr += variables.paymentMethod.rawValue + paymentMethod.rawValue + "\r\n"
-        fileStr += variables.remarks.rawValue + remarks + "\r\n"
-        fileStr += "==\r\n"
-        
-        return fileStr
+    func makeExportingDataSet() -> ExportingDataSet {
+        let variableNames: [String] = variables.getElements()
+        let values: [String] = [
+            accountsTitle.string(),
+            dateFormatter.string(from: date),
+            name,
+            String(pieces),
+            String(amounts),
+            paymentMethod.rawValue,
+            remarks
+        ]
+        return .init(className: String(describing: type(of: self)),
+                     variableNames: variableNames,
+                     values: values)
     }
 }
 
@@ -82,7 +90,7 @@ extension Transaction: FileImportable {
                 case "pieces":
                     self.pieces = Int(variable[1])!
                 case "amounts":
-                    self.pieces = Int(variable[1])!
+                    self.amounts = Int(variable[1])!
                 case "paymentMethod":
                     self.paymentMethod = PaymentMethod(rawValue: variable[1])!
                 case "remarks":

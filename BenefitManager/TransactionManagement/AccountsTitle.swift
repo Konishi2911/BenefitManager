@@ -19,6 +19,7 @@ struct AccountsTitle {
         // Espense
         [
             "Food",
+            "Daily Uses",
             "Utilities",
             "Communications",
             "Entertainments",
@@ -47,6 +48,12 @@ struct AccountsTitle {
             [
                 "Foods"
             ],
+            //Daily Uses
+            [
+                "Cleanings",
+                "Detergents",
+                "Miscellaneous"
+            ],
             // Utilities
             [
                 "Water",
@@ -57,7 +64,8 @@ struct AccountsTitle {
             [
                 "Phone",
                 "Internet",
-                "Mail"
+                "Mail",
+                "Stamp"
             ],
             // Entertainments
             [
@@ -105,14 +113,31 @@ struct AccountsTitle {
         }
     }
     
-    private let title: String
-    private let transactionType: TransactionType
-    private let headerIndex: Int
-    private let titleIndex: Int
+    private let _title: String
+    private let _transactionType: TransactionType
+    private let _headerIndex: Int
+    private let _titleIndex: Int
+    
+    var transactionType: TransactionType {
+        get { return _transactionType }
+    }
+    var headerIndex: Int {
+        get { return _headerIndex }
+    }
+    var headerString: String {
+        get { return AccountsTitle.headersString(transactionType: _transactionType)[_headerIndex] }
+    }
+    var titleIndex: Int {
+        get { return _titleIndex }
+    }
+    var titleString: String {
+        get { return AccountsTitle.titlesString(at: _headerIndex,
+                                                transactionType: _transactionType)[_titleIndex] }
+    }
     
     static var Empty: AccountsTitle {
         get {
-            return .init(title: "", .Income, headerIndex: -1, titleIndex: -1)
+            return .init(title: "empty", .Income, headerIndex: -1, titleIndex: -1)
         }
     }
     static func headersString(transactionType tType: TransactionType) -> [String] {
@@ -144,27 +169,30 @@ struct AccountsTitle {
         }
     }
     func string() ->String {
-        return self.title
+        return self._title
     }
     
     private init (title t: String, _ tType: TransactionType, headerIndex hi: Int, titleIndex ti: Int) {
-        self.title = t
-        self.transactionType = tType
-        self.headerIndex = hi
-        self.titleIndex = ti
+        self._title = t
+        self._transactionType = tType
+        self._headerIndex = hi
+        self._titleIndex = ti
     }
     init (title t: AccountsTitle) {
-        self.title = t.title
-        self.transactionType = t.transactionType
-        self.headerIndex = t.headerIndex
-        self.titleIndex = t.titleIndex
+        self._title = t._title
+        self._transactionType = t._transactionType
+        self._headerIndex = t._headerIndex
+        self._titleIndex = t._titleIndex
     }
+    /// Initializes with title name as string.
+    /// If there is no specified title, AccountsTitle will be Empty
+    /// - Parameter t: specifiying title as string
     init (title t: String) {
         var ii: Int = 0, jj: Int = 0, kk: Int = 0
         var isMatch: Bool = false
         for k in 0...1 {
-            for i in 0...Self._header[k].count {
-                for j in 0...Self._titles[k][i].count {
+            for i in 0..<Self._header[k].count {
+                for j in 0..<Self._titles[k][i].count {
                     if t == Self._titles[k][i][j] {
                         ii = i
                         jj = j
@@ -178,17 +206,16 @@ struct AccountsTitle {
             if isMatch {break}
         }
         if (isMatch) {
-            self.title = t
-            self.transactionType = TransactionType.index(kk)
-            self.headerIndex = ii
-            self.titleIndex = jj
+            self._title = t
+            self._transactionType = TransactionType.index(kk)
+            self._headerIndex = ii
+            self._titleIndex = jj
         }
         else {
-            self.title = ""
-            self.headerIndex = 0
-            self.titleIndex = 0
-            self.transactionType = .Income
-            fatalError("There is no such title")
+            self._title = "empty"
+            self._headerIndex = -1
+            self._titleIndex = -1
+            self._transactionType = .Income
         }
     }
 }

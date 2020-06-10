@@ -30,5 +30,51 @@ class BenefitManagerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testTransactionAnalyzer() {
+        let dataBaseName = "DBMock"
+        TransactionDataBase.createNewDataBase(identifier: dataBaseName)
+        let database = TransactionDataBase.getInstance(identifier: dataBaseName)!
+        
+        database.transactions = [
+            Transaction.init(title: AccountsTitle.init(title: "Foods"),
+                            date: Date(),
+                            name: "TestMock1",
+                            pieces: 1,
+                            amounts: 400,
+                            paymentMethod: PaymentMethod.cash,
+                            remarks: ""),
+            Transaction.init(title: AccountsTitle.init(title: "Foods"),
+                            date: Date(),
+                            name: "TestMock2",
+                            pieces: 1,
+                            amounts: 140,
+                            paymentMethod: PaymentMethod.cash,
+                            remarks: ""),
+            Transaction.init(title: AccountsTitle.init(title: "Gas"),
+                            date: Date(),
+                            name: "TestMock2",
+                            pieces: 1,
+                            amounts: 2000,
+                            paymentMethod: PaymentMethod.cash,
+                            remarks: ""),
+            Transaction.init(title: AccountsTitle.init(title: "Detergents"),
+                            date: Date(),
+                            name: "TestMock2",
+                            pieces: 1,
+                            amounts: 2600,
+                            paymentMethod: PaymentMethod.cash,
+                            remarks: ""),
+
+        ] as [Transaction]
+        
+        let analyzer = TransactionAnalyzer(database)
+        XCTAssertEqual(analyzer.weeklyExpense(), 5140)
+        XCTAssertEqual(analyzer.weeklyHeaderBreakdown(), ["Food", "Utilities", "Daily Uses"])
+        XCTAssertEqual(analyzer.weeklyAmountsBreakdown(), [540, 2000, 2600])
+        XCTAssertEqual(analyzer.monthlyExpense(), 5140)
+        XCTAssertEqual(analyzer.monthlyHeaderBreakdown(), ["Food", "Utilities", "Daily Uses"])
+        XCTAssertEqual(analyzer.monthlyAmountsBreakdown(), [540, 2000, 2600])
+    }
 
 }

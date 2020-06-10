@@ -9,10 +9,20 @@
 import Cocoa
 
 class CircleChartView: NSView, CAAnimationDelegate {
+    private var debuggingCounter = 0
+    
+    private var chartRegion = CGRect()
+    private var legendRegion = CGRect()
+    
+    private let legendLayer = CALayer()
+    private let chartBaseLayer = CALayer()
     private let animationLayer = CAShapeLayer()
     private var chartLayers: [CAShapeLayer] = []
     private let shadowLayer = CAShapeLayer()
     private let titleLayer = CATextLayer()
+    private var legendIconLayers: [CALayer] = []
+    private var legendTextLayers: [CATextLayer] = []
+    private let titleLayer_deprecated = CATextLayer()
     private var displayLinks: CVDisplayLink? = nil
     
     private var chartCircleRadius: CGFloat = 0.0
@@ -33,6 +43,10 @@ class CircleChartView: NSView, CAAnimationDelegate {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        
+        // Make Region
+        makeRegion()
+        
         self.layerContentsRedrawPolicy = .onSetNeedsDisplay
         autoresizesSubviews = true
         
@@ -46,11 +60,53 @@ class CircleChartView: NSView, CAAnimationDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    private func makeRegion() {
+        // Make Region
+        let widthHeightDif = self.bounds.width * 0.5 - self.bounds.height
+        
+        var margineMinX: CGFloat = 0.0
+        var legendWidth: CGFloat = self.bounds.height
+        if widthHeightDif > 0.0 {
+            margineMinX = widthHeightDif
+            legendWidth = self.bounds.width * 0.5
+        }
+        
+        chartRegion = CGRect(x: margineMinX,
+                             y: 0.0,
+                             width: self.bounds.height,
+                             height: self.bounds.height
+        )
+        legendRegion = CGRect(x: legendWidth,
+                              y: 0.0,
+                              width: legendWidth,
+                              height: self.bounds.height
+        )
+    }
+    private func setUpChartBaseLayer() {
+        chartBaseLayer.frame = chartRegion
+        chartBaseLayer.autoresizingMask = .init(
+            arrayLiteral:
+            .layerHeightSizable,
+            //.layerMaxXMargin,
+            .layerMaxYMargin,
+            .layerMinXMargin,
+            .layerMinYMargin,
+            .layerWidthSizable
+        )
+        chartBaseLayer.actions = [
+            "bounds": NSNull(),
+            "frame": NSNull(),
+            "contents": NSNull(),
+            "position": NSNull(),
+            "transform": NSNull(),
+            "lineWidth": NSNull()
+        ]
+        self.layer?.addSublayer(chartBaseLayer)
+    }
     private func setUpAnimationLayer() {
-        animationLayer.frame = self.bounds
+        animationLayer.frame = chartBaseLayer.bounds
         animationLayer.lineCap = .butt
-        animationLayer.lineWidth = self.bounds.height * 0.8
+        animationLayer.lineWidth = animationLayer.bounds.height * 0.8
         //animationLayer.lineWidth = 1
         animationLayer.strokeColor = NSColor.blue.cgColor
         animationLayer.fillColor = NSColor.clear.cgColor
@@ -64,7 +120,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
             .layerWidthSizable
         )
         //self.layer?.addSublayer(animationLayer)
-        self.layer?.mask = (animationLayer)
+        chartBaseLayer.mask = (animationLayer)
         
         animationLayer.actions = [
             "bounds": NSNull(),
@@ -77,9 +133,9 @@ class CircleChartView: NSView, CAAnimationDelegate {
         
         // Set Animation Path
         let coveringPath1 = CGMutablePath()
-        coveringPath1.addArc(center: CGPoint(x: self.bounds.width / 2.0,
-                                             y: self.bounds.height / 2.0),
-                            radius: self.bounds.height * 0.4,
+        coveringPath1.addArc(center: CGPoint(x: animationLayer.bounds.width / 2.0,
+                                             y: animationLayer.bounds.height / 2.0),
+                             radius: animationLayer.bounds.height * 0.4,
                             startAngle: CGFloat(0.5 * .pi),
                             endAngle: CGFloat(2.5 * .pi),
                             clockwise: false)
@@ -96,14 +152,14 @@ class CircleChartView: NSView, CAAnimationDelegate {
         }
         chartLayers.removeAll()
         
-        self.chartCircleWidth = self.bounds.height * 0.2
+        self.chartCircleWidth = chartBaseLayer.bounds.height * 0.2
         for value in self.ratioSource {
             // ignore the data if it is zero
             if value == 0 { continue }
             
             let tempLayer = CAShapeLayer()
             tempLayer.opacity = 1
-            tempLayer.frame = self.bounds
+            tempLayer.frame = chartBaseLayer.bounds
             tempLayer.lineCap = .butt
             tempLayer.lineWidth = chartCircleWidth
             
@@ -127,7 +183,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
                 "lineWidth": NSNull()
             ]
             self.chartLayers.append(tempLayer)
-            self.layer?.addSublayer(tempLayer)
+            chartBaseLayer.addSublayer(tempLayer)
             
             // Set Chart Circle Path
             let chartPath = CGMutablePath()
@@ -146,7 +202,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
         //let shadowMask = CAShapeLayer()
         //shadowMask.frame = shadowLayer.bounds
         
-        shadowLayer.frame = self.bounds
+        shadowLayer.frame = chartBaseLayer.bounds
         //shadowLayer.fillColor = .black
         shadowLayer.fillRule = .evenOdd
         shadowLayer.opacity = 0.8
@@ -162,9 +218,9 @@ class CircleChartView: NSView, CAAnimationDelegate {
             .layerHeightSizable,
             .layerWidthSizable
         )
-        self.layer?.addSublayer(shadowLayer)
+        chartBaseLayer.addSublayer(shadowLayer)
         
-        shadowLayer.actions = [
+        chartBaseLayer.actions = [
             "bounds": NSNull(),
             "frame": NSNull(),
             "contents": NSNull(),
@@ -193,12 +249,98 @@ class CircleChartView: NSView, CAAnimationDelegate {
         //shadowLayer.mask
     }
     
+    private func setUpLegendLayer() {
+        legendLayer.frame = legendRegion
+        legendLayer.backgroundColor = .clear
+        legendLayer.autoresizingMask = .init(
+            arrayLiteral:
+            .layerHeightSizable,
+            .layerWidthSizable
+        )
+        self.layer?.addSublayer(legendLayer)
+        legendLayer.actions = [
+            "bounds": NSNull(),
+            "frame": NSNull(),
+            "contents": NSNull(),
+            "position": NSNull(),
+            "transform": NSNull()
+        ]
+
+    }
+    private func setUpLegendItemLayers() {
+        let margineLeftside: CGFloat = 10
+        let margineTop: CGFloat = 15
+        let iconSize: CGFloat = 15
+        let textMargineLeft: CGFloat = 10
+        let fontSize: CGFloat = 18
+        var dataIterator: Int = 0
+        
+        // Remove Current ChartLAyer
+        for layer in self.legendIconLayers {
+            layer.removeFromSuperlayer()
+        }
+        for layer in self.legendTextLayers {
+            layer.removeFromSuperlayer()
+        }
+        legendIconLayers.removeAll()
+        legendTextLayers.removeAll()
+        
+        for value in self.ratioSource {
+            // ignore the data if it is zero
+            if value == 0 { continue }
+            
+            // Legend Icon
+            let iconLayer = CALayer()
+            iconLayer.opacity = 1
+            iconLayer.frame = CGRect(x: CGFloat(margineLeftside),
+                                     y: legendLayer.bounds.height * 0.8 - CGFloat(dataIterator + 1) * CGFloat(margineTop + iconSize),
+                                     width: iconSize,
+                                     height: iconSize)
+            // Legend Text
+            let textLayer = CATextLayer()
+            textLayer.frame = CGRect(x: CGFloat(margineLeftside + iconSize + textMargineLeft),
+                                     y: legendLayer.bounds.height * 0.8 - CGFloat(dataIterator + 1) * CGFloat(margineTop + iconSize),
+                                     width: legendLayer.bounds.width - 50,
+                                     height: 20)
+            textLayer.fontSize = fontSize
+            textLayer.string = "test \(dataIterator + 1)"
+            
+            // Set Chart Color
+            if dataIterator >= colorSet.count { dataIterator = 0 }
+            iconLayer.backgroundColor = colorSet[dataIterator].cgColor
+            dataIterator += 1
+            
+            iconLayer.actions = [
+                "bounds": NSNull(),
+                "frame": NSNull(),
+                "contents": NSNull(),
+                "position": NSNull(),
+                "transform": NSNull(),
+                "lineWidth": NSNull()
+            ]
+            textLayer.actions = [
+                "bounds": NSNull(),
+                "frame": NSNull(),
+                "contents": NSNull(),
+                "position": NSNull(),
+            ]
+
+            // Add tempLayers to Collection
+            self.legendIconLayers.append(iconLayer)
+            self.legendTextLayers.append(textLayer)
+            legendLayer.addSublayer(iconLayer)
+            legendLayer.addSublayer(textLayer)
+        }
+    }
     private func setUpTitleLayer() {
-        //titleLayer.isWrapped = true
+        titleLayer.frame = CGRect(x: 0,
+                                  y: legendRegion.height * 0.8,
+                                  width: legendRegion.width,
+                                  height: legendRegion.height * 0.2)
         titleLayer.backgroundColor = .clear
         titleLayer.foregroundColor = NSColor.systemGray.cgColor
-        titleLayer.font = NSFont.boldSystemFont(ofSize: 10)
-        titleLayer.alignmentMode = .center
+        titleLayer.font = NSFont.boldSystemFont(ofSize: 16)
+        titleLayer.alignmentMode = .left
         titleLayer.autoresizingMask = .init(
             arrayLiteral:
             .layerMaxXMargin,
@@ -208,7 +350,6 @@ class CircleChartView: NSView, CAAnimationDelegate {
             .layerHeightSizable,
             .layerWidthSizable
         )
-        
         titleLayer.actions = [
             "bounds": NSNull(),
             "frame": NSNull(),
@@ -216,7 +357,34 @@ class CircleChartView: NSView, CAAnimationDelegate {
             "position": NSNull()
         ]
         
-        self.layer?.addSublayer(titleLayer)
+        legendLayer.addSublayer(titleLayer)
+        titleLayer.string = "Title"
+    }
+    
+    private func setUpTitleLayer_Deprecated() {
+        //titleLayer.isWrapped = true
+        titleLayer_deprecated.backgroundColor = .clear
+        titleLayer_deprecated.foregroundColor = NSColor.systemGray.cgColor
+        titleLayer_deprecated.font = NSFont.boldSystemFont(ofSize: 10)
+        titleLayer_deprecated.alignmentMode = .center
+        titleLayer_deprecated.autoresizingMask = .init(
+            arrayLiteral:
+            .layerMaxXMargin,
+            .layerMaxYMargin,
+            .layerMinXMargin,
+            .layerMinYMargin,
+            .layerHeightSizable,
+            .layerWidthSizable
+        )
+        
+        titleLayer_deprecated.actions = [
+            "bounds": NSNull(),
+            "frame": NSNull(),
+            "fontSize": NSNull(),
+            "position": NSNull()
+        ]
+        
+        self.layer?.addSublayer(titleLayer_deprecated)
         if !firstAppearing {
             setTitleLayerFrame(chartTitle)
         }
@@ -224,14 +392,14 @@ class CircleChartView: NSView, CAAnimationDelegate {
     
     private func setTitleLayerFrame(_ title: String?) {
         // Temporary FontSize
-        var tempFontSize: CGFloat = self.bounds.height * 0.1
+        var tempFontSize: CGFloat = chartRegion.height * 0.1
         let chartCentralInterval = (2 * chartCircleRadius - chartCircleWidth) * 0.8
         
         // Configure Paragraph Style
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = NSLineBreakMode.byWordWrapping
         
-        let constraintsSize = NSSize(width: self.bounds.width, height: self.bounds.height)
+        let constraintsSize = NSSize(width: chartRegion.width, height: chartRegion.height)
         
         var textSize: NSRect
         if title != nil {
@@ -255,11 +423,11 @@ class CircleChartView: NSView, CAAnimationDelegate {
             textSize = NSRect(x: 0, y: 0, width: 100, height: 100)
         }
         
-        titleLayer.string = title
-        titleLayer.fontSize = (tempFontSize)
-        titleLayer.frame = CGRect(x: self.bounds.minX,
-                                  y: self.bounds.height * 0.5 - ceil(textSize.height) * 0.5,
-                                  width: self.bounds.maxX,
+        titleLayer_deprecated.string = title
+        titleLayer_deprecated.fontSize = (tempFontSize)
+        titleLayer_deprecated.frame = CGRect(x: chartRegion.minX,
+                                  y: chartRegion.height * 0.5 - ceil(textSize.height) * 0.5,
+                                  width: chartRegion.maxX,
                                   height: ceil(textSize.height))
     }
     private func appearingAnimation(_ dirtyRect: NSRect) {
@@ -276,6 +444,13 @@ class CircleChartView: NSView, CAAnimationDelegate {
     func setTitle(_ title: String) {
         self.chartTitle = title
         //setTitleLayerFrame(chartTitle)
+    }
+    func setValues(source valueSet: [Int]) {
+        var doubleValueSet: [Double] = []
+        for value in valueSet {
+            doubleValueSet.append(Double(value))
+        }
+        setValues(source: doubleValueSet)
     }
     func setValues(source valueSet: [Double]) {
         self.values = valueSet
@@ -301,17 +476,25 @@ class CircleChartView: NSView, CAAnimationDelegate {
     }
     
     override func updateLayer() {
+        print("updating layer\(debuggingCounter)")
+        debuggingCounter += 1
+        
+        makeRegion()
+        
+        setUpChartBaseLayer()
         setUpAnimationLayer()
         setUpShadowLayer()
         setUpChartLayer()
+        setUpLegendLayer()
+        setUpLegendItemLayers()
         setUpTitleLayer()
         
         if firstAppearing {
-            appearingAnimation(self.bounds)
+            appearingAnimation(chartRegion)
         } else {
             animationLayer.setNeedsLayout()
         }
-        titleLayer.setNeedsLayout()
+        titleLayer_deprecated.setNeedsLayout()
     }
     override func draw(_ dirtyRect: NSRect) {
         // configure the line Styles

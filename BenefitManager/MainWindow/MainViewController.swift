@@ -30,6 +30,8 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        // Configure Transaction database
+        TransactionDataBaseConfigurator.configure()
         // Confugure the height of MenuTableCellView
         menuTableView.rowHeight = 36
         // Select first row

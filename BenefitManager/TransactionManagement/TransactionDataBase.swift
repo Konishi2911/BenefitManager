@@ -24,6 +24,13 @@ class TransactionDataBase {
         }
     }
     
+    static func analyzer(identifier DBName: String) -> TransactionAnalyzer? {
+        if let database = _instances[DBName] {
+            return TransactionAnalyzer(database)
+        } else {
+            return nil
+        }
+    }
     static func recordDidChange(identifier DBName: String) {
         
     }
@@ -32,7 +39,7 @@ class TransactionDataBase {
     /// - Parameter DBName: the DataBase imported records
     /// - Throws: <#description#>
     static func importRecord(to DBName: String) throws {
-        let fi = FileImporter()
+        let fi = FileImporter(importingPath: TransactionDataBaseConfigurator.dataBaseFilePath)
         
         TransactionDataBase.deleteAllRecords(on: DBName)
         try fi.importData()
@@ -47,12 +54,15 @@ class TransactionDataBase {
         recordDidChange(identifier: DBName)
         NotificationCenter.default.post(Notification(name: recordDidChangeNotification, object: nil))
     }
-    private func saveRecords(in DBName: String) {
+    static func saveRecords(in DBName: String) {
         do {
-            let fe: FileExporter = FileExporter()
+            let fe: FileExporter = FileExporter(
+                fileNmae: TransactionDataBaseConfigurator.dataBaseFileName,
+                exportingDirectory: TransactionDataBaseConfigurator.dataBaseDirectory
+            )
             try fe.export(from: TransactionDataBase.getInstance(identifier: DBName)!.transactions)
         } catch {
-            
+            fatalError("The Record cannot be saved")
         }
     }
     /// Creates new DataBase that named identifier.
@@ -138,5 +148,6 @@ class TransactionDataBase {
     func processing() {
         
     }
-    private init() {  }
+    private init() {
+    }
 }

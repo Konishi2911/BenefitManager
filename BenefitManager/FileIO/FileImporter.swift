@@ -18,9 +18,16 @@ class FileImporter {
     init() {
         _filePath = NSHomeDirectory() + "/untitle.pb"
     }
+    init(importingPath path: String){
+        _filePath = path
+    }
     
     func importData() throws {
-        _importStr = try String(contentsOf: URL(fileURLWithPath: _filePath))
+        do {
+            _importStr = try String(contentsOf: URL(fileURLWithPath: _filePath))
+        } catch {
+            print("[Error] FileImporter cannot open the file specified URL. It can be broken or not exsist.")
+        }
         
         //let processedStr = importStr.replacingOccurrences(of: " ", with: "")
         let strArray = _importStr.components(separatedBy: .newlines)
