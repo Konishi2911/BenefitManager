@@ -1037,10 +1037,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "weeklyTransactions(from:)"
-            landmarkType = "7">
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1053,10 +1053,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "weeklyTransactions(from:)"
-            landmarkType = "7">
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1085,8 +1085,8 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
             landmarkName = "updateLayer()"
             landmarkType = "7">
             <Locations>
@@ -1133,10 +1133,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "weeklyAmountsBreakdown(dateOfWeek:)"
-            landmarkType = "7">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "5302F490-54AD-4490-B9C4-401FB7369586 - f6ebbe8b0d27296f"
@@ -1181,8 +1181,8 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "455"
-            endingLineNumber = "455"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "setValues(source:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1197,8 +1197,8 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "448"
-            endingLineNumber = "448"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "setValues(source:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1213,8 +1213,8 @@
             filePath = "BenefitManager/Overview/OverviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "setExtractionRange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1229,10 +1229,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "weeklyTransactions(from:)"
-            landmarkType = "7">
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "53D94859-5717-4D0A-AC1B-24C732E1FF30 - 5096067dd9e81575"
@@ -1277,10 +1277,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "extractTransaction(from:to:)"
-            landmarkType = "7">
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1293,10 +1293,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "monthlyExpense(date:)"
-            landmarkType = "7">
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1309,10 +1309,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "weeklyAmountsBreakdown(dateOfWeek:)"
-            landmarkType = "7">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "A6CDB11E-EFFA-44F9-87B8-92AF7750C134 - f6ebbe8b0d27296f"
@@ -1357,10 +1357,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "monthlyAmountsBreakdown(dateOfWeek:)"
-            landmarkType = "7">
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1373,10 +1373,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "monthlyAmountsBreakdown(dateOfWeek:)"
-            landmarkType = "7">
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1389,10 +1389,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "monthlyAmountsBreakdown(dateOfWeek:)"
-            landmarkType = "7">
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1405,10 +1405,10 @@
             filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "monthlyTransactions(from:)"
-            landmarkType = "7">
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "TransactionAnalyzer"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

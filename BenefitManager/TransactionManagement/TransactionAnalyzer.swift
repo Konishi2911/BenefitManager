@@ -11,10 +11,17 @@ import Cocoa
 struct TransactionAnalyzer {
     private let _transactionDB: TransactionDataBase
     
+    let week: WeeklyTransactionAnalyzer
+    let month: MonthlyTransactionAnalyzer
+    
     init(_ transactionDataBase: TransactionDataBase) {
         self._transactionDB = transactionDataBase
+        
+        week = WeeklyTransactionAnalyzer(dataBase: _transactionDB)
+        month = MonthlyTransactionAnalyzer(dataBase: _transactionDB)
     }
     
+    /*
     /// Returns total income for the past week from today.
     /// - Returns: Total income amounts
     func weeklyIncome() -> Int {
@@ -204,4 +211,5 @@ struct TransactionAnalyzer {
         }
         return Transactions
     }
+ */
 }

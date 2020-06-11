@@ -20,6 +20,9 @@
 		B235D3AA248C66EE00B42348 /* IFileExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB6A2488628000661B1C /* IFileExportable.swift */; };
 		B235D3AC248DD36E00B42348 /* CircleChartVeiwLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B235D3AB248DD36E00B42348 /* CircleChartVeiwLayout.xib */; };
 		B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24608D024869DBD00686B13 /* XibInstaceable.swift */; };
+		B24CBCD82490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */; };
+		B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */; };
+		B24CBCDC24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCDB24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift */; };
 		B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7982487087E00CF21A1 /* StatisticsViewController.swift */; };
 		B255C79C248708BE00CF21A1 /* StatisticsViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */; };
 		B255C79F248709D000CF21A1 /* JournalViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79E248709D000CF21A1 /* JournalViewLayout.xib */; };
@@ -82,6 +85,9 @@
 		B235D39A248C4A5400B42348 /* TransactionDataBaseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataBaseConfigurator.swift; sourceTree = "<group>"; };
 		B235D3AB248DD36E00B42348 /* CircleChartVeiwLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleChartVeiwLayout.xib; sourceTree = "<group>"; };
 		B24608D024869DBD00686B13 /* XibInstaceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibInstaceable.swift; sourceTree = SOURCE_ROOT; };
+		B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTransactionAnalyzer.swift; sourceTree = "<group>"; };
+		B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTransactionAnalyzer.swift; sourceTree = "<group>"; };
+		B24CBCDB24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTransactionAnalyzer.swift; sourceTree = "<group>"; };
 		B255C7982487087E00CF21A1 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsViewLayout.xib; sourceTree = SOURCE_ROOT; };
 		B255C79E248709D000CF21A1 /* JournalViewLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalViewLayout.xib; sourceTree = "<group>"; };
@@ -192,6 +198,9 @@
 				B255C7B32487486E00CF21A1 /* Transaction.swift */,
 				B26DBB652488615F00661B1C /* PaymentMethod.swift */,
 				B235D398248B3A7800B42348 /* TransactionAnalyzer.swift */,
+				B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */,
+				B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */,
+				B24CBCDB24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift */,
 			);
 			path = TransactionManagement;
 			sourceTree = "<group>";
@@ -444,8 +453,10 @@
 				B255C7A72487382400CF21A1 /* ItemEditorViewController.swift in Sources */,
 				B26DBB832488834C00661B1C /* FileImporter.swift in Sources */,
 				B255C7B42487486E00CF21A1 /* Transaction.swift in Sources */,
+				B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */,
 				B255C7AA24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */,
 				B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */,
+				B24CBCDC24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */,
 				B26DBB682488622B00661B1C /* FileImportable.swift in Sources */,
 				B235D399248B3A7800B42348 /* TransactionAnalyzer.swift in Sources */,
 				B255C7B72487523600CF21A1 /* AccountsTitle.swift in Sources */,
@@ -456,6 +467,7 @@
 				B2904A072485627100DA9569 /* OverviewViewController.swift in Sources */,
 				B2904A202485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
 				B235D39B248C4A5400B42348 /* TransactionDataBaseConfigurator.swift in Sources */,
+				B24CBCD82490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */,
 				B26DBB862489BAAA00661B1C /* ItemEditorViewDelegate.swift in Sources */,
 				B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */,
 			);

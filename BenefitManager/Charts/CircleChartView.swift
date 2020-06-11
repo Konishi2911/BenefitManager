@@ -22,6 +22,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
     private let titleLayer = CATextLayer()
     private var legendIconLayers: [CALayer] = []
     private var legendTextLayers: [CATextLayer] = []
+    private var legendDetailLayers: [CALayer] = []
     private let titleLayer_deprecated = CATextLayer()
     private var displayLinks: CVDisplayLink? = nil
     
@@ -30,9 +31,9 @@ class CircleChartView: NSView, CAAnimationDelegate {
     
     private var chartTitle = ""
     private var firstAppearing = true
-    private var values: [Double] = []
     private var dataSource: [Double] = []
     private var ratioSource: [Double] = []
+    private var itemsNameSource: [String] = []
     private var colorSet: [NSColor] = [.init(red: 0.49, green: 0.81, blue: 0.42, alpha: 1),
                                        .init(red: 0.39, green: 0.65, blue: 0.34, alpha: 1),
                                        .init(red: 0.29, green: 0.49, blue: 0.34, alpha: 1),
@@ -268,11 +269,18 @@ class CircleChartView: NSView, CAAnimationDelegate {
 
     }
     private func setUpLegendItemLayers() {
-        let margineLeftside: CGFloat = 10
-        let margineTop: CGFloat = 15
+        let margineLeftside: CGFloat = 20
+        let margineTop: CGFloat = 5
         let iconSize: CGFloat = 15
         let textMargineLeft: CGFloat = 10
+        let textHeight: CGFloat = 20
+        let detailMargineTop: CGFloat = 0
+        let detailMargineLeft: CGFloat = 14
+        let detailHeight: CGFloat = 20
         let fontSize: CGFloat = 18
+        
+        let itemHeight: CGFloat = margineTop + textHeight + detailMargineTop + detailHeight
+        
         var dataIterator: Int = 0
         
         // Remove Current ChartLAyer
@@ -282,8 +290,12 @@ class CircleChartView: NSView, CAAnimationDelegate {
         for layer in self.legendTextLayers {
             layer.removeFromSuperlayer()
         }
+        for layer in self.legendDetailLayers {
+            layer.removeFromSuperlayer()
+        }
         legendIconLayers.removeAll()
         legendTextLayers.removeAll()
+        legendDetailLayers.removeAll()
         
         for value in self.ratioSource {
             // ignore the data if it is zero
@@ -293,17 +305,45 @@ class CircleChartView: NSView, CAAnimationDelegate {
             let iconLayer = CALayer()
             iconLayer.opacity = 1
             iconLayer.frame = CGRect(x: CGFloat(margineLeftside),
-                                     y: legendLayer.bounds.height * 0.8 - CGFloat(dataIterator + 1) * CGFloat(margineTop + iconSize),
+                                     y: legendLayer.bounds.height * 0.8
+                                        - CGFloat(Double(dataIterator) + 0.5) * itemHeight
+                                        - (iconSize + margineTop) * 0.5,
                                      width: iconSize,
                                      height: iconSize)
             // Legend Text
             let textLayer = CATextLayer()
+            textLayer.foregroundColor = NSColor.textColor.cgColor
             textLayer.frame = CGRect(x: CGFloat(margineLeftside + iconSize + textMargineLeft),
-                                     y: legendLayer.bounds.height * 0.8 - CGFloat(dataIterator + 1) * CGFloat(margineTop + iconSize),
+                                     y: legendLayer.bounds.height * 0.8
+                                        - CGFloat(dataIterator + 1) * itemHeight
+                                        + detailHeight + detailMargineTop,
                                      width: legendLayer.bounds.width - 50,
-                                     height: 20)
+                                     height: textHeight)
             textLayer.fontSize = fontSize
-            textLayer.string = "test \(dataIterator + 1)"
+            
+            // Legend Details
+            let detailLayer = CATextLayer()
+            detailLayer.foregroundColor = NSColor.darkGray.cgColor
+            detailLayer.frame = CGRect(x: CGFloat(margineLeftside + iconSize + detailMargineLeft),
+                                     y: legendLayer.bounds.height * 0.8
+                                        - CGFloat(dataIterator + 1) * itemHeight,
+                                     width: legendLayer.bounds.width - 50,
+                                     height: detailHeight * 0.8)
+            detailLayer.fontSize = fontSize * 0.8
+            
+            // Set Legend Title
+            if itemsNameSource.count > dataIterator {
+                textLayer.string = itemsNameSource[dataIterator]
+            } else {
+                textLayer.string = "items\(dataIterator + 1)"
+            }
+            // Set Detail Datas
+            if ratioSource.count > dataIterator {
+                detailLayer.string = String(format: "%.1f", (ratioSource[dataIterator] * 1000).rounded() * 0.1)
+                    + " %  |  ¥\(dataSource[dataIterator])"
+            } else {
+                detailLayer.string = "---"
+            }
             
             // Set Chart Color
             if dataIterator >= colorSet.count { dataIterator = 0 }
@@ -328,8 +368,10 @@ class CircleChartView: NSView, CAAnimationDelegate {
             // Add tempLayers to Collection
             self.legendIconLayers.append(iconLayer)
             self.legendTextLayers.append(textLayer)
+            self.legendDetailLayers.append(detailLayer)
             legendLayer.addSublayer(iconLayer)
             legendLayer.addSublayer(textLayer)
+            legendLayer.addSublayer(detailLayer)
         }
     }
     private func setUpTitleLayer() {
@@ -453,8 +495,6 @@ class CircleChartView: NSView, CAAnimationDelegate {
         setValues(source: doubleValueSet)
     }
     func setValues(source valueSet: [Double]) {
-        self.values = valueSet
-        
         // Calculate Total
         var totalVal = 0.0
         for value in valueSet {
@@ -473,6 +513,9 @@ class CircleChartView: NSView, CAAnimationDelegate {
         self.needsDisplay = true
         //draw(self.bounds)
         //updateLayer()
+    }
+    func setItemNames(source strArray: [String]) {
+        self.itemsNameSource = strArray
     }
     
     override func updateLayer() {
