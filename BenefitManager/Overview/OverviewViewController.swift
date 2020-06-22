@@ -11,6 +11,9 @@ import Cocoa
 class OverviewViewController: NSViewController {
     private var transactionAnalyzer: TransactionAnalyzer!
     
+    private static var selectedRangeSelector: Int = 0
+    private var numFormatter = NumberFormatter()
+    
     @IBOutlet weak var expensesIndicater: NSTextField!
     @IBOutlet weak var rangeSelector: NSPopUpButtonCell!
     @IBOutlet weak var circleChartView: CircleChartView!
@@ -23,6 +26,7 @@ class OverviewViewController: NSViewController {
     ]
     
     @IBAction func extractionRangeDidChange(_ sender: NSPopUpButtonCell) {
+        Self.selectedRangeSelector = sender.indexOfSelectedItem
         setExtractionRange()
     }
     
@@ -41,6 +45,7 @@ class OverviewViewController: NSViewController {
     func initialize() {
         rangeSelector.removeAllItems()
         rangeSelector.addItems(withTitles: extractionRange)
+        rangeSelector.selectItem(at: Self.selectedRangeSelector)
     }
     func initializeCircleChart() {
         let chartView = CircleChartView(frame: circleChartView.bounds)

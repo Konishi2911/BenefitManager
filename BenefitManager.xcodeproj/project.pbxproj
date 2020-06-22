@@ -23,6 +23,9 @@
 		B24CBCD82490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */; };
 		B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */; };
 		B24CBCDC24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCDB24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift */; };
+		B24CBCDD2491BDA5006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */; };
+		B24CBCDE2491BDA8006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCDB24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift */; };
+		B24CBCDF2491BDAB006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */; };
 		B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255C7982487087E00CF21A1 /* StatisticsViewController.swift */; };
 		B255C79C248708BE00CF21A1 /* StatisticsViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79B248708BE00CF21A1 /* StatisticsViewLayout.xib */; };
 		B255C79F248709D000CF21A1 /* JournalViewLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B255C79E248709D000CF21A1 /* JournalViewLayout.xib */; };
@@ -481,11 +484,14 @@
 				B235D3AA248C66EE00B42348 /* IFileExportable.swift in Sources */,
 				B235D3A5248C64E500B42348 /* XibInstaceable.swift in Sources */,
 				B255C7B52487486F00CF21A1 /* Transaction.swift in Sources */,
+				B24CBCDE2491BDA8006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */,
+				B24CBCDF2491BDAB006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */,
 				B29049E724855E7500DA9569 /* BenefitManagerTests.swift in Sources */,
 				B235D39E248C61DA00B42348 /* TransactionDataBaseConfigurator.swift in Sources */,
 				B235D39C248C59D800B42348 /* TransactionAnalyzer.swift in Sources */,
 				B255C7B12487480D00CF21A1 /* TransactionDataBase.swift in Sources */,
 				B235D3A7248C66E300B42348 /* FileImporter.swift in Sources */,
+				B24CBCDD2491BDA5006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */,
 				B2904A042485622100DA9569 /* CircleChartView.swift in Sources */,
 				B235D3A6248C66E000B42348 /* ImportData.swift in Sources */,
 				B235D3A8248C66E500B42348 /* FileExporter.swift in Sources */,

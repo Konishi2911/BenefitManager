@@ -131,8 +131,13 @@ struct AccountsTitle {
         get { return _titleIndex }
     }
     var titleString: String {
-        get { return AccountsTitle.titlesString(at: _headerIndex,
-                                                transactionType: _transactionType)[_titleIndex] }
+        get {
+            guard AccountsTitle.titlesString(at: _headerIndex, transactionType: _transactionType).count >= 1 else {
+                return ""
+            }
+            return AccountsTitle.titlesString(at: _headerIndex,
+                                                transactionType: _transactionType)[_titleIndex]
+        }
     }
     
     static var Empty: AccountsTitle {
@@ -149,6 +154,10 @@ struct AccountsTitle {
         }
     }
     static func titlesString(at headerIndex: Int, transactionType tType: TransactionType) -> [String] {
+        guard headerIndex >= 0 else {
+            return []
+        }
+        
         switch tType {
         case .Income:
             return _titles[0][headerIndex]
@@ -157,6 +166,10 @@ struct AccountsTitle {
         }
     }
     static func title(at titleIndex: Int, on headerIndex: Int, TransactionType tType: TransactionType) -> AccountsTitle {
+        guard titleIndex >= 0 && headerIndex >= 0 else {
+            return AccountsTitle.Empty
+        }
+        
         switch tType {
         case .Income:
             return AccountsTitle(title: _titles[0][headerIndex][titleIndex], .Income,
@@ -219,64 +232,3 @@ struct AccountsTitle {
         }
     }
 }
-
-/*
- private static let _titles = [
-     "Income": [
-         "Salary": [
-             "Salaries"
-         ],
-         "Scholarship": [
-             "Scholarship"
-         ],
-         "Miscellaneous Expenses": [
-             "Miscellaneous Expenses"
-         ]
-     ],
-     "Expense": [
-         "Tuition": [
-             "Tuition"
-         ],
-         "Business Expenses": [
-             "Business Expenses"
-         ],
-         "Hobby Expenses": [
-             "Hobby Expenses"
-         ],
-         "Socializing Expenses": [
-             "Socializing Expenses"
-         ],
-         "Transport Costs": [
-             "Transport Costs"
-         ],
-         "Issurance": [
-             "Issurance"
-         ],
-         "Housing Expenses": [
-             "Housing Expenses"
-         ],
-         "Food Expenses": [
-             "Food Expenses"
-         ],
-         "Utility Costs": [
-             "Gas Costs",
-             "Electricity Costs",
-             "Water Costs"
-         ],
-         "Telecommunications": [
-             "Internet Costs",
-             "Phone Costs",
-             "Mail"
-         ],
-         "Taxes": [
-             "Taxes"
-         ],
-         "Clothing Expenses": [
-             "Clothing Expenses"
-         ],
-         "Medical Expenses": [
-             "Medical Expenses"
-         ]
-     ]
- ]
- */

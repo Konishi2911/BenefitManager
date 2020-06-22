@@ -347,8 +347,8 @@
             filePath = "BenefitManager/Overview/OverviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -896,8 +896,8 @@
             filePath = "BenefitManager/Overview/OverviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1030,38 +1030,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2CAE0CFB-C26B-4514-BDE3-D3191A73EC63"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B0D80700-1142-4705-ABF0-8A362374F746"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1547B4EE-B8E9-4E77-AD4E-2D79E6DA7366"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1126,54 +1094,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5302F490-54AD-4490-B9C4-401FB7369586"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "5302F490-54AD-4490-B9C4-401FB7369586 - f6ebbe8b0d27296f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManager.TransactionAnalyzer.weeklyAmountsBreakdown(dateOfWeek: Foundation.Date) -&gt; Swift.Array&lt;Swift.Int&gt;"
-                  moduleName = "BenefitManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "567">
-               </Location>
-               <Location
-                  uuid = "5302F490-54AD-4490-B9C4-401FB7369586 - b94ac9f9235c72c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManagerTests.TransactionAnalyzer.weeklyAmountsBreakdown(dateOfWeek: Foundation.Date) -&gt; Swift.Array&lt;Swift.Int&gt;"
-                  moduleName = "BenefitManagerTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "567">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "71CE8DD0-BBF6-481E-BBAE-AC8E8CBF0412"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1213,8 +1133,8 @@
             filePath = "BenefitManager/Overview/OverviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "setExtractionRange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1222,193 +1142,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53D94859-5717-4D0A-AC1B-24C732E1FF30"
+            uuid = "9C2F5A2C-AE9F-4270-A5B5-BC9F1A4A2B6A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
+            filePath = "BenefitManager/TransactionManagement/AccountsTitle.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "titlesString(at:transactionType:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "53D94859-5717-4D0A-AC1B-24C732E1FF30 - 5096067dd9e81575"
+                  uuid = "9C2F5A2C-AE9F-4270-A5B5-BC9F1A4A2B6A - cd5267ba16931f63"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BenefitManager.TransactionAnalyzer.weeklyTransactions(from: Foundation.Date) -&gt; Swift.Array&lt;BenefitManager.Transaction&gt;"
+                  symbolName = "static BenefitManager.AccountsTitle.titlesString(at: Swift.Int, transactionType: BenefitManager.AccountsTitle.TransactionType) -&gt; Swift.Array&lt;Swift.String&gt;"
                   moduleName = "BenefitManager"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/AccountsTitle.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "404">
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "83">
                </Location>
                <Location
-                  uuid = "53D94859-5717-4D0A-AC1B-24C732E1FF30 - 4e8cd38d9f41c031"
+                  uuid = "9C2F5A2C-AE9F-4270-A5B5-BC9F1A4A2B6A - 6f5e37952ce9a4e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BenefitManagerTests.TransactionAnalyzer.weeklyTransactions(from: Foundation.Date) -&gt; Swift.Array&lt;BenefitManagerTests.Transaction&gt;"
+                  symbolName = "static BenefitManagerTests.AccountsTitle.titlesString(at: Swift.Int, transactionType: BenefitManagerTests.AccountsTitle.TransactionType) -&gt; Swift.Array&lt;Swift.String&gt;"
                   moduleName = "BenefitManagerTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/AccountsTitle.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "404">
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "83">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "76F8D115-EE56-408A-B9D6-D6AB5D61B130"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0806C7E4-EA9A-43A7-9E07-282EE0EFEF28"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A6CDB11E-EFFA-44F9-87B8-92AF7750C134"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "A6CDB11E-EFFA-44F9-87B8-92AF7750C134 - f6ebbe8b0d27296f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManager.TransactionAnalyzer.weeklyAmountsBreakdown(dateOfWeek: Foundation.Date) -&gt; Swift.Array&lt;Swift.Int&gt;"
-                  moduleName = "BenefitManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "582">
-               </Location>
-               <Location
-                  uuid = "A6CDB11E-EFFA-44F9-87B8-92AF7750C134 - b94ac9f9235c72c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManagerTests.TransactionAnalyzer.weeklyAmountsBreakdown(dateOfWeek: Foundation.Date) -&gt; Swift.Array&lt;Swift.Int&gt;"
-                  moduleName = "BenefitManagerTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "582">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D6CA953-D261-4393-89C4-F81392FB4AB1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2CED08DE-947F-444F-BDCA-414BFC33BBD7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "704B6A27-EEAA-4205-AA57-0ABA9819B73A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EEB61B18-BDD3-4EE6-B028-E61734086D20"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BenefitManager/TransactionManagement/TransactionAnalyzer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "TransactionAnalyzer"
-            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

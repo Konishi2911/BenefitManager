@@ -30,7 +30,20 @@ class BenefitManagerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+    func testAccountsTitle() {
+        var i = 0;
+        for _ in AccountsTitle.headersString(transactionType: .Expense) {
+            for titleText in AccountsTitle.titlesString(at: i, transactionType: .Expense) {
+                let testInstance = AccountsTitle(title: titleText);
+                XCTAssertEqual(testInstance.titleString, titleText)
+            }
+            i += 1
+        }
+        
+        let testInstance = AccountsTitle(title: "Dammy")
+        XCTAssertEqual(testInstance.titleString, "")
+
+    }
     func testTransactionAnalyzer() {
         let dataBaseName = "DBMock"
         TransactionDataBase.createNewDataBase(identifier: dataBaseName)
@@ -65,16 +78,23 @@ class BenefitManagerTests: XCTestCase {
                             amounts: 2600,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
+            Transaction.init(title: AccountsTitle.init(title: "Miscellaneous"),
+                            date: Date(),
+                            name: "TestMock2",
+                            pieces: 1,
+                            amounts: 1000,
+                            paymentMethod: PaymentMethod.cash,
+                            remarks: ""),
 
         ] as [Transaction]
         
         let analyzer = TransactionAnalyzer(database)
-        XCTAssertEqual(analyzer.weeklyExpense(), 5140)
-        XCTAssertEqual(analyzer.weeklyHeaderBreakdown(), ["Food", "Utilities", "Daily Uses"])
-        XCTAssertEqual(analyzer.weeklyAmountsBreakdown(), [540, 2000, 2600])
-        XCTAssertEqual(analyzer.monthlyExpense(), 5140)
-        XCTAssertEqual(analyzer.monthlyHeaderBreakdown(), ["Food", "Utilities", "Daily Uses"])
-        XCTAssertEqual(analyzer.monthlyAmountsBreakdown(), [540, 2000, 2600])
+        XCTAssertEqual(analyzer.week.totalAmounts(type: .Expense), 6140)
+        XCTAssertEqual(analyzer.week.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
+        XCTAssertEqual(analyzer.week.amountsBreakdown(type: .Expense), [540, 2000, 3600])
+        XCTAssertEqual(analyzer.month.totalAmounts(type: .Expense), 6140)
+        XCTAssertEqual(analyzer.month.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
+        XCTAssertEqual(analyzer.month.amountsBreakdown(type: .Expense), [540, 2000, 3600])
     }
 
 }

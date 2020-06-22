@@ -270,10 +270,10 @@ class CircleChartView: NSView, CAAnimationDelegate {
     }
     private func setUpLegendItemLayers() {
         let margineLeftside: CGFloat = 20
-        let margineTop: CGFloat = 5
+        let margineTop: CGFloat = 7
         let iconSize: CGFloat = 15
         let textMargineLeft: CGFloat = 10
-        let textHeight: CGFloat = 20
+        let textHeight: CGFloat = 22
         let detailMargineTop: CGFloat = 0
         let detailMargineLeft: CGFloat = 14
         let detailHeight: CGFloat = 20
