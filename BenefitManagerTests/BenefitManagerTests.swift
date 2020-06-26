@@ -53,7 +53,7 @@ class BenefitManagerTests: XCTestCase {
             Transaction.init(title: AccountsTitle.init(title: "Foods"),
                             date: Date(),
                             name: "TestMock1",
-                            pieces: 1,
+                            pieces: 2,
                             amounts: 400,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
@@ -89,12 +89,12 @@ class BenefitManagerTests: XCTestCase {
         ] as [Transaction]
         
         let analyzer = TransactionAnalyzer(database)
-        XCTAssertEqual(analyzer.week.totalAmounts(type: .Expense), 6140)
+        XCTAssertEqual(analyzer.week.totalAmounts(type: .Expense), 6540)
         XCTAssertEqual(analyzer.week.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
-        XCTAssertEqual(analyzer.week.amountsBreakdown(type: .Expense), [540, 2000, 3600])
-        XCTAssertEqual(analyzer.month.totalAmounts(type: .Expense), 6140)
+        XCTAssertEqual(analyzer.week.amountsBreakdown(type: .Expense), [940, 2000, 3600])
+        XCTAssertEqual(analyzer.month.totalAmounts(type: .Expense), 6540)
         XCTAssertEqual(analyzer.month.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
-        XCTAssertEqual(analyzer.month.amountsBreakdown(type: .Expense), [540, 2000, 3600])
+        XCTAssertEqual(analyzer.month.amountsBreakdown(type: .Expense), [940, 2000, 3600])
     }
 
 }

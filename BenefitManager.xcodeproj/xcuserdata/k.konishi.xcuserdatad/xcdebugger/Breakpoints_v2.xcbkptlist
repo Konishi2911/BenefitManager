@@ -1053,42 +1053,10 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
             landmarkName = "updateLayer()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5425C303-E300-464D-A1E1-61B17D5418D8 - a83e4d4758e4fa65"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManager.CircleChartView.updateLayer() -&gt; ()"
-                  moduleName = "BenefitManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "472"
-                  endingLineNumber = "472"
-                  offsetFromSymbolStart = "86">
-               </Location>
-               <Location
-                  uuid = "5425C303-E300-464D-A1E1-61B17D5418D8 - a35172c407fb2e05"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BenefitManagerTests.CircleChartView.updateLayer() -&gt; ()"
-                  moduleName = "BenefitManagerTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "472"
-                  endingLineNumber = "472"
-                  offsetFromSymbolStart = "86">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1101,8 +1069,8 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
             landmarkName = "setValues(source:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1117,8 +1085,8 @@
             filePath = "BenefitManager/Charts/CircleChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "setValues(source:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1133,8 +1101,8 @@
             filePath = "BenefitManager/Overview/OverviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "setExtractionRange()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1183,6 +1151,198 @@
                   startingLineNumber = "157"
                   endingLineNumber = "157"
                   offsetFromSymbolStart = "83">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70B8E77C-2695-4452-873C-2ACF4DD1C387"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartViewChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70B8E77C-2695-4452-873C-2ACF4DD1C387 - a88adba9a7796c3b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManager.CircleChartViewChartView.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManager.CircleChartViewChartView&gt;"
+                  moduleName = "BenefitManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartViewChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "70B8E77C-2695-4452-873C-2ACF4DD1C387 - 6c67140df54b7508"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManager.CircleChartViewChartView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManager.CircleChartViewChartView&gt;"
+                  moduleName = "BenefitManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartViewChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "338">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6600A546-A2AF-45F5-A7D6-C83875941B31"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6600A546-A2AF-45F5-A7D6-C83875941B31 - 29e7165d19b89593"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManagerUITests.CircleChartView.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManagerUITests.CircleChartView&gt;"
+                  moduleName = "BenefitManagerUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "6600A546-A2AF-45F5-A7D6-C83875941B31 - 4e0618386339ed40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManagerUITests.CircleChartView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManagerUITests.CircleChartView&gt;"
+                  moduleName = "BenefitManagerUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "637">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BA99FF3-C977-4C84-85A6-1D1CBD14AE48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "loadNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AB6B773-473F-4FC9-A43C-8B77B4F2CDB5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartViewChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "setUpChartLayer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE453CCD-378A-40BB-A3BA-9E41B0D48840"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "setValues(source:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DBFB782-0BC5-47F9-9A45-9C5FBFC85FF3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BenefitManager/Charts/CircleChartView_LegendView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0DBFB782-0BC5-47F9-9A45-9C5FBFC85FF3 - 38841678ea8bd707"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManager.CircleChartView_LegendView.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManager.CircleChartView_LegendView&gt;"
+                  moduleName = "BenefitManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView_LegendView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "0DBFB782-0BC5-47F9-9A45-9C5FBFC85FF3 - 8cdab28f6c6dea1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BenefitManager.CircleChartView_LegendView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BenefitManager.CircleChartView_LegendView&gt;"
+                  moduleName = "BenefitManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Elements/Utilities/BenefitManager/BenefitManager/Charts/CircleChartView_LegendView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "591">
                </Location>
             </Locations>
          </BreakpointContent>

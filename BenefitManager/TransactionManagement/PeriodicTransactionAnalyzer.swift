@@ -62,7 +62,7 @@ extension PeriodicTransactionAnalyzer {
         for header in headers {
             for transaction in extractTransactions(from: startDate, to: endDate, type: tType) {
                 if transaction.accountsTitle.headerString != header { continue }
-                transactionAmounts[i] += transaction.amounts
+                transactionAmounts[i] += transaction.amounts * transaction.pieces
             }
             i += 1
         }

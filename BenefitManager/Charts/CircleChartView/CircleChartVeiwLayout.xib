@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CircleChartView" customModule="BenefitManager" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="7s1-3t-CbB" id="8Fb-xq-NdY"/>
+                <outlet property="legendScrollView" destination="kGn-nc-A9f" id="D3D-i4-GKl"/>
+                <outlet property="legendView" destination="5d8-s7-Mxt" id="gof-PF-3Bf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="508" height="236"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7s1-3t-CbB" customClass="CircleChartViewChartView" customModule="BenefitManager" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="256" height="236"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                </customView>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-qS-gc3">
+                    <rect key="frame" x="255" y="208" width="253" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                </customView>
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGn-nc-A9f">
+                    <rect key="frame" x="255" y="0.0" width="253" height="209"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" drawsBackground="NO" id="QYk-aT-bFt">
+                        <rect key="frame" x="0.0" y="0.0" width="253" height="209"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view id="5d8-s7-Mxt" customClass="CircleChartView_LegendView" customModule="BenefitManager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="194"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jh6-Gn-Ae5">
+                        <rect key="frame" x="0.0" y="193" width="253" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="V8x-ze-ZNf">
+                        <rect key="frame" x="237" y="0.0" width="16" height="209"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <point key="canvasLocation" x="154" y="136"/>
+        </customView>
+    </objects>
+</document>

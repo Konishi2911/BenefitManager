@@ -48,20 +48,8 @@ class OverviewViewController: NSViewController {
         rangeSelector.selectItem(at: Self.selectedRangeSelector)
     }
     func initializeCircleChart() {
-        let chartView = CircleChartView(frame: circleChartView.bounds)
-        chartView.autoresizingMask = NSView.AutoresizingMask(
-            arrayLiteral:
-            .height,
-            .width,
-            .maxXMargin,
-            .maxYMargin,
-            .minXMargin,
-            .minYMargin
-        )
-        circleChartView = chartView
-        circleChartViewArea.addSubview(chartView)
-        chartView.setTitle("test")
-        chartView.setValues(source: [5.5, 2.3])
+        circleChartView.setTitle("test")
+        circleChartView.setValues(source: [5.5, 2.3])
     }
     func setExtractionRange() {
         switch rangeSelector.titleOfSelectedItem ?? "" {

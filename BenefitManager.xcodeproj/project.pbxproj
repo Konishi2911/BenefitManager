@@ -47,6 +47,10 @@
 		B26DBB832488834C00661B1C /* FileImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB812488834C00661B1C /* FileImporter.swift */; };
 		B26DBB842488834C00661B1C /* FileExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB822488834C00661B1C /* FileExporter.swift */; };
 		B26DBB862489BAAA00661B1C /* ItemEditorViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */; };
+		B2869CA024A560CA009E3A5D /* CircleChartViewChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */; };
+		B2869CA124A56D30009E3A5D /* CircleChartViewChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */; };
+		B2869CA224A56D54009E3A5D /* CircleChartViewChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */; };
+		B2869CA424A5A42F009E3A5D /* CircleChartView_LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */; };
 		B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29049D524855E7200DA9569 /* AppDelegate.swift */; };
 		B29049D824855E7500DA9569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29049D724855E7500DA9569 /* Assets.xcassets */; };
 		B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29049D924855E7500DA9569 /* MainWindow.xib */; };
@@ -108,6 +112,8 @@
 		B26DBB812488834C00661B1C /* FileImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileImporter.swift; sourceTree = "<group>"; };
 		B26DBB822488834C00661B1C /* FileExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileExporter.swift; sourceTree = "<group>"; };
 		B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorViewDelegate.swift; sourceTree = "<group>"; };
+		B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartViewChartView.swift; sourceTree = "<group>"; };
+		B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartView_LegendView.swift; sourceTree = "<group>"; };
 		B29049D224855E7200DA9569 /* BenefitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenefitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29049D524855E7200DA9569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29049D724855E7500DA9569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +226,17 @@
 			path = FileIO;
 			sourceTree = "<group>";
 		};
+		B2869CA524A63638009E3A5D /* CircleChartView */ = {
+			isa = PBXGroup;
+			children = (
+				B235D3AB248DD36E00B42348 /* CircleChartVeiwLayout.xib */,
+				B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */,
+				B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */,
+				B2904A022485622100DA9569 /* CircleChartView.swift */,
+			);
+			path = CircleChartView;
+			sourceTree = "<group>";
+		};
 		B29049C924855E7200DA9569 = {
 			isa = PBXGroup;
 			children = (
@@ -292,8 +309,7 @@
 		B2904A0D2485658300DA9569 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
-				B235D3AB248DD36E00B42348 /* CircleChartVeiwLayout.xib */,
-				B2904A022485622100DA9569 /* CircleChartView.swift */,
+				B2869CA524A63638009E3A5D /* CircleChartView */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -457,6 +473,7 @@
 				B26DBB832488834C00661B1C /* FileImporter.swift in Sources */,
 				B255C7B42487486E00CF21A1 /* Transaction.swift in Sources */,
 				B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */,
+				B2869CA424A5A42F009E3A5D /* CircleChartView_LegendView.swift in Sources */,
 				B255C7AA24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */,
 				B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */,
 				B24CBCDC24911CAA006AA41A /* MonthlyTransactionAnalyzer.swift in Sources */,
@@ -471,6 +488,7 @@
 				B2904A202485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
 				B235D39B248C4A5400B42348 /* TransactionDataBaseConfigurator.swift in Sources */,
 				B24CBCD82490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */,
+				B2869CA024A560CA009E3A5D /* CircleChartViewChartView.swift in Sources */,
 				B26DBB862489BAAA00661B1C /* ItemEditorViewDelegate.swift in Sources */,
 				B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */,
 			);
@@ -495,6 +513,7 @@
 				B2904A042485622100DA9569 /* CircleChartView.swift in Sources */,
 				B235D3A6248C66E000B42348 /* ImportData.swift in Sources */,
 				B235D3A8248C66E500B42348 /* FileExporter.swift in Sources */,
+				B2869CA224A56D54009E3A5D /* CircleChartViewChartView.swift in Sources */,
 				B235D39D248C5C9E00B42348 /* PaymentMethod.swift in Sources */,
 				B235D3A9248C66EB00B42348 /* FileImportable.swift in Sources */,
 			);
@@ -504,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2869CA124A56D30009E3A5D /* CircleChartViewChartView.swift in Sources */,
 				B29049F224855E7500DA9569 /* BenefitManagerUITests.swift in Sources */,
 				B2904A052485622100DA9569 /* CircleChartView.swift in Sources */,
 			);

@@ -35,12 +35,12 @@
                 </textField>
                 <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="j46-rp-BZB">
                     <rect key="frame" x="318" y="189" width="421" height="207"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="RvS-9j-fQ4">
                         <rect key="frame" x="0.0" y="0.0" width="421" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-6n-Dqi">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JkM-6n-Dqi" customClass="CircleChartView" customModule="BenefitManager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="421" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>

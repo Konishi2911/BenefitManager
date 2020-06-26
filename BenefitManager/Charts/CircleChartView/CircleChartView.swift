@@ -40,9 +40,16 @@ class CircleChartView: NSView, CAAnimationDelegate {
                                        .init(red: 0.20, green: 0.32, blue: 0.17, alpha: 1),
                                        .init(red: 0.10, green: 0.16, blue: 0.08, alpha: 1)
     ]
+    private let titleViewHeight: CGFloat = 30
+    private let chartLegendRatio: CGFloat = 0.5
+    
     override var wantsUpdateLayer: Bool { return true }
-
-    override init(frame frameRect: NSRect) {
+    
+    @IBOutlet weak var chartView: CircleChartViewChartView?
+    @IBOutlet weak var legendScrollView: NSScrollView!
+    @IBOutlet weak var legendView: CircleChartView_LegendView?
+    
+    override private init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
         // Make Region
@@ -59,8 +66,39 @@ class CircleChartView: NSView, CAAnimationDelegate {
                        object: nil)
     }
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        
+        // Make Region
+        makeRegion()
+        
+        self.layerContentsRedrawPolicy = .onSetNeedsDisplay
+        autoresizesSubviews = true
+        
+        postsBoundsChangedNotifications = true
+        let nc = NotificationCenter.default
+        nc.addObserver(self,
+                       selector: #selector(type(of: self).frameSizeDidChageNotification(notification:)),
+                       name: CircleChartView.frameDidChangeNotification,
+                       object: nil)
+        loadNib()
     }
+    private func loadNib() {
+        if let success = NSNib(nibNamed: "CircleChartVeiwLayout", bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil), success {
+                        
+            chartView?.frame = CGRect(x: 0, y: 0,
+                                      width: self.frame.width * chartLegendRatio,
+                                      height: self.frame.height)
+            legendScrollView.frame = CGRect(x: self.frame.width * chartLegendRatio, y: 0,
+                                            width: self.frame.width * (1 - chartLegendRatio),
+                                            height: self.frame.height - titleViewHeight)
+            //legendView?.frame = CGRect(x: 0, y: self.frame.width * 0.5,
+              //                         width: self.frame.width * 0.5,
+                //                       height: self.frame.height)
+            self.addSubview(chartView!)
+            self.addSubview(legendScrollView!)
+        }
+    }
+    
     private func makeRegion() {
         // Make Region
         let widthHeightDif = self.bounds.width * 0.5 - self.bounds.height
@@ -82,172 +120,6 @@ class CircleChartView: NSView, CAAnimationDelegate {
                               width: legendWidth,
                               height: self.bounds.height
         )
-    }
-    private func setUpChartBaseLayer() {
-        chartBaseLayer.frame = chartRegion
-        chartBaseLayer.autoresizingMask = .init(
-            arrayLiteral:
-            .layerHeightSizable,
-            //.layerMaxXMargin,
-            .layerMaxYMargin,
-            .layerMinXMargin,
-            .layerMinYMargin,
-            .layerWidthSizable
-        )
-        chartBaseLayer.actions = [
-            "bounds": NSNull(),
-            "frame": NSNull(),
-            "contents": NSNull(),
-            "position": NSNull(),
-            "transform": NSNull(),
-            "lineWidth": NSNull()
-        ]
-        self.layer?.addSublayer(chartBaseLayer)
-    }
-    private func setUpAnimationLayer() {
-        animationLayer.frame = chartBaseLayer.bounds
-        animationLayer.lineCap = .butt
-        animationLayer.lineWidth = animationLayer.bounds.height * 0.8
-        //animationLayer.lineWidth = 1
-        animationLayer.strokeColor = NSColor.blue.cgColor
-        animationLayer.fillColor = NSColor.clear.cgColor
-        animationLayer.autoresizingMask = .init(
-            arrayLiteral:
-            .layerHeightSizable,
-            //.layerMaxXMargin,
-            //.layerMaxYMargin,
-            //.layerMinXMargin,
-            //.layerMinYMargin,
-            .layerWidthSizable
-        )
-        //self.layer?.addSublayer(animationLayer)
-        chartBaseLayer.mask = (animationLayer)
-        
-        animationLayer.actions = [
-            "bounds": NSNull(),
-            "frame": NSNull(),
-            "contents": NSNull(),
-            "position": NSNull(),
-            "transform": NSNull(),
-            "lineWidth": NSNull()
-        ]
-        
-        // Set Animation Path
-        let coveringPath1 = CGMutablePath()
-        coveringPath1.addArc(center: CGPoint(x: animationLayer.bounds.width / 2.0,
-                                             y: animationLayer.bounds.height / 2.0),
-                             radius: animationLayer.bounds.height * 0.4,
-                            startAngle: CGFloat(0.5 * .pi),
-                            endAngle: CGFloat(2.5 * .pi),
-                            clockwise: false)
-        
-        animationLayer.path = coveringPath1
-    }
-    private func setUpChartLayer() {
-        var colorIterator: Int = 0
-        var previousAngle: Double = 0.5 * Double.pi
-        
-        // Remove Current ChartLAyer
-        for layer in self.chartLayers {
-            layer.removeFromSuperlayer()
-        }
-        chartLayers.removeAll()
-        
-        self.chartCircleWidth = chartBaseLayer.bounds.height * 0.2
-        for value in self.ratioSource {
-            // ignore the data if it is zero
-            if value == 0 { continue }
-            
-            let tempLayer = CAShapeLayer()
-            tempLayer.opacity = 1
-            tempLayer.frame = chartBaseLayer.bounds
-            tempLayer.lineCap = .butt
-            tempLayer.lineWidth = chartCircleWidth
-            
-            // Set Chart Color
-            if colorIterator >= colorSet.count { colorIterator = 0 }
-            tempLayer.strokeColor = colorSet[colorIterator].cgColor
-            tempLayer.fillColor = .clear
-            colorIterator += 1
-            
-            tempLayer.autoresizingMask = .init(
-                arrayLiteral:
-                .layerHeightSizable,
-                .layerWidthSizable
-            )
-            tempLayer.actions = [
-                "bounds": NSNull(),
-                "frame": NSNull(),
-                "contents": NSNull(),
-                "position": NSNull(),
-                "transform": NSNull(),
-                "lineWidth": NSNull()
-            ]
-            self.chartLayers.append(tempLayer)
-            chartBaseLayer.addSublayer(tempLayer)
-            
-            // Set Chart Circle Path
-            let chartPath = CGMutablePath()
-            self.chartCircleRadius = tempLayer.bounds.height * 0.35
-            chartPath.addArc(center: CGPoint(x: tempLayer.bounds.width / 2.0,
-                                             y: tempLayer.bounds.height / 2.0),
-                            radius: chartCircleRadius,
-                            startAngle: CGFloat(previousAngle),
-                            endAngle: CGFloat(previousAngle + (2 * .pi * value)),
-                            clockwise: false)
-            tempLayer.path = chartPath
-            previousAngle += (2 * .pi * value)
-        }
-    }
-    private func setUpShadowLayer() {
-        //let shadowMask = CAShapeLayer()
-        //shadowMask.frame = shadowLayer.bounds
-        
-        shadowLayer.frame = chartBaseLayer.bounds
-        //shadowLayer.fillColor = .black
-        shadowLayer.fillRule = .evenOdd
-        shadowLayer.opacity = 0.8
-        
-        shadowLayer.shouldRasterize = true
-        shadowLayer.shadowColor = .black
-        shadowLayer.shadowRadius = 5
-        shadowLayer.shadowOpacity = 1
-        shadowLayer.shadowOffset = CGSize(width: 0, height: 0)
-        
-        shadowLayer.autoresizingMask = .init(
-            arrayLiteral:
-            .layerHeightSizable,
-            .layerWidthSizable
-        )
-        chartBaseLayer.addSublayer(shadowLayer)
-        
-        chartBaseLayer.actions = [
-            "bounds": NSNull(),
-            "frame": NSNull(),
-            "contents": NSNull(),
-            "position": NSNull(),
-            "transform": NSNull(),
-            "lineWidth": NSNull()
-        ]
-        
-        // Set Animation Path
-        let shadowPathOut = CGMutablePath()
-        //let shadowPathIn = CGMutablePath()
-        shadowPathOut.addArc(center: CGPoint(x: shadowLayer.bounds.width / 2.0,
-                                             y: shadowLayer.bounds.height / 2.0),
-                            radius: shadowLayer.bounds.height * 0.45,
-                            startAngle: CGFloat(0.5 * .pi),
-                            endAngle: CGFloat(2.5 * .pi),
-                            clockwise: false)
-        shadowPathOut.addArc(center: CGPoint(x: shadowLayer.bounds.width / 2.0 ,
-                                             y: shadowLayer.bounds.height / 2.0),
-                            radius: shadowLayer.bounds.height * 0.25,
-                            startAngle: CGFloat(0.5 * .pi),
-                            endAngle: CGFloat(2.5 * .pi),
-                            clockwise: false)
-    
-        shadowLayer.path = shadowPathOut
-        //shadowLayer.mask
     }
     
     private func setUpLegendLayer() {
@@ -472,16 +344,6 @@ class CircleChartView: NSView, CAAnimationDelegate {
                                   width: chartRegion.maxX,
                                   height: ceil(textSize.height))
     }
-    private func appearingAnimation(_ dirtyRect: NSRect) {
-        let animation = CAKeyframeAnimation(keyPath: "strokeEnd")
-        animation.values = [0,1]
-        animation.keyTimes = [0, 1.0]
-        animation.duration = 0.5
-        animation.delegate = self
-        
-        animation.isRemovedOnCompletion = false
-        animationLayer.add(animation, forKey: "appearingAnimation")
-    }
     
     func setTitle(_ title: String) {
         self.chartTitle = title
@@ -510,15 +372,25 @@ class CircleChartView: NSView, CAAnimationDelegate {
         self.dataSource = valueSet
         self.ratioSource = ratioValue
         
+        self.chartView?.relativeDataSource = ratioValue
+        self.legendView?.dataSource = valueSet
+        self.legendView?.relativeDataSource = ratioValue
+        
         self.needsDisplay = true
         //draw(self.bounds)
         //updateLayer()
     }
     func setItemNames(source strArray: [String]) {
         self.itemsNameSource = strArray
+        
+        self.legendView?.nameSource = strArray
     }
     
     override func updateLayer() {
+        chartView?.needsDisplay = true
+        legendView?.needsDisplay = true
+        
+        /*
         print("updating layer\(debuggingCounter)")
         debuggingCounter += 1
         
@@ -538,34 +410,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
             animationLayer.setNeedsLayout()
         }
         titleLayer_deprecated.setNeedsLayout()
-    }
-    override func draw(_ dirtyRect: NSRect) {
-        // configure the line Styles
-        let context = NSGraphicsContext.current?.cgContext
-        context?.setLineWidth(dirtyRect.height * 0.2)
-        context?.setLineCap(.butt)
-        context?.setShadow(offset: CGSize(width: 0, height: -0.2), blur: 3, color: .black)
-        
-        var colorIterator: Int = 0
-        var previousAngle = (.pi / 2.0)
-        for data in self.ratioSource {
-            // ignore the data if it is zero
-            if data == 0 { continue }
-            
-            // Set Chart Color
-            if colorIterator >= colorSet.count { colorIterator = 0 }
-            colorSet[colorIterator].set()
-            colorIterator += 1
-            
-            // Add and Draw Chart Arc
-            context?.addArc(center: CGPoint(x: dirtyRect.width / 2.0, y: dirtyRect.height / 2.0),
-                            radius: dirtyRect.height * 0.3,
-                            startAngle: CGFloat(previousAngle),
-                            endAngle: CGFloat(previousAngle + (2 * .pi * data)),
-                            clockwise: false)
-            context?.strokePath()
-            previousAngle += (2 * .pi * data)
-        }
+ */
     }
     
     @objc func frameSizeDidChageNotification(notification: Notification) {
