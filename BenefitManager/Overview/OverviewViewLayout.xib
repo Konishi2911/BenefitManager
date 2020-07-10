@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="OverviewViewController" customModule="BenefitManager" customModuleProvider="target">
             <connections>
+                <outlet property="barChartView" destination="Via-SL-O1L" id="lgG-Z4-9MG"/>
                 <outlet property="circleChartView" destination="JkM-6n-Dqi" id="zCM-68-4yQ"/>
                 <outlet property="circleChartViewArea" destination="j46-rp-BZB" id="s9A-bC-Xpf"/>
                 <outlet property="expensesIndicater" destination="ySI-gr-H3l" id="qij-sl-h3g"/>
@@ -17,15 +18,15 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="ADE-uR-GCA">
-            <rect key="frame" x="0.0" y="0.0" width="759" height="485"/>
+            <rect key="frame" x="0.0" y="0.0" width="759" height="594"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <box verticalHuggingPriority="750" boxType="separator" id="fBT-9R-xNd">
-                    <rect key="frame" x="10" y="420" width="739" height="5"/>
+                    <rect key="frame" x="10" y="529" width="739" height="5"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="nbq-VC-7uk">
-                    <rect key="frame" x="18" y="422" width="164" height="43"/>
+                    <rect key="frame" x="18" y="531" width="164" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Overview" id="efS-yM-1AO">
                         <font key="font" size="36" name="HelveticaNeue-Bold"/>
@@ -34,7 +35,7 @@
                     </textFieldCell>
                 </textField>
                 <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="j46-rp-BZB">
-                    <rect key="frame" x="318" y="189" width="421" height="207"/>
+                    <rect key="frame" x="318" y="298" width="421" height="207"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="RvS-9j-fQ4">
                         <rect key="frame" x="0.0" y="0.0" width="421" height="207"/>
@@ -48,7 +49,7 @@
                     </view>
                 </box>
                 <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="DNp-fo-WgQ">
-                    <rect key="frame" x="20" y="266" width="278" height="130"/>
+                    <rect key="frame" x="20" y="375" width="278" height="130"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView" id="TkA-cu-bHD">
                         <rect key="frame" x="0.0" y="0.0" width="278" height="130"/>
@@ -97,8 +98,12 @@
                         </subviews>
                     </view>
                 </box>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Via-SL-O1L" customClass="BarChartView" customModule="BenefitManager" customModuleProvider="target">
+                    <rect key="frame" x="20" y="20" width="719" height="258"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </customView>
             </subviews>
-            <point key="canvasLocation" x="267.5" y="-269.5"/>
+            <point key="canvasLocation" x="267.5" y="-215"/>
         </customView>
     </objects>
 </document>

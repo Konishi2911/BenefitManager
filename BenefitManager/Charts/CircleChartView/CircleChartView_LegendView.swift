@@ -55,7 +55,7 @@ class CircleChartView_LegendView: NSView, CALayerDelegate {
     private let detailMargine: CGFloat = 15
     private let detailMargineTop: CGFloat = 2
     private let detailHeight: CGFloat = 20
-    private let itemMargine: CGFloat = 3
+    private let itemMargine: CGFloat = 0
     private let nameFontSize: CGFloat = 18
     private let detailFontSize: CGFloat = 14
     private var itemHeight: CGFloat {

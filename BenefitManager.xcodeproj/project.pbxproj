@@ -19,6 +19,8 @@
 		B235D3A9248C66EB00B42348 /* FileImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB672488622B00661B1C /* FileImportable.swift */; };
 		B235D3AA248C66EE00B42348 /* IFileExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DBB6A2488628000661B1C /* IFileExportable.swift */; };
 		B235D3AC248DD36E00B42348 /* CircleChartVeiwLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = B235D3AB248DD36E00B42348 /* CircleChartVeiwLayout.xib */; };
+		B2421D7324A885BE00EA5950 /* CircleChartView_LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */; };
+		B2421D7424A885BF00EA5950 /* CircleChartView_LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */; };
 		B24608D124869DBD00686B13 /* XibInstaceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24608D024869DBD00686B13 /* XibInstaceable.swift */; };
 		B24CBCD82490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD72490CCE0006AA41A /* PeriodicTransactionAnalyzer.swift */; };
 		B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CBCD92490DD88006AA41A /* WeeklyTransactionAnalyzer.swift */; };
@@ -51,6 +53,11 @@
 		B2869CA124A56D30009E3A5D /* CircleChartViewChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */; };
 		B2869CA224A56D54009E3A5D /* CircleChartViewChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */; };
 		B2869CA424A5A42F009E3A5D /* CircleChartView_LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */; };
+		B2869CA924A63AE7009E3A5D /* BarChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2869CA824A63AE7009E3A5D /* BarChartView.xib */; };
+		B288873B24B67D8500689879 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288873A24B67D8500689879 /* BarChartView.swift */; };
+		B288873D24B6809A00689879 /* BarChartView_ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288873C24B6809A00689879 /* BarChartView_ChartView.swift */; };
+		B288873F24B75B6700689879 /* BarChartView_YLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288873E24B75B6700689879 /* BarChartView_YLabelView.swift */; };
+		B288874124B75B7D00689879 /* BarChartView_XLableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288874024B75B7D00689879 /* BarChartView_XLableView.swift */; };
 		B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29049D524855E7200DA9569 /* AppDelegate.swift */; };
 		B29049D824855E7500DA9569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29049D724855E7500DA9569 /* Assets.xcassets */; };
 		B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29049D924855E7500DA9569 /* MainWindow.xib */; };
@@ -114,6 +121,11 @@
 		B26DBB852489BAAA00661B1C /* ItemEditorViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditorViewDelegate.swift; sourceTree = "<group>"; };
 		B2869C9F24A560CA009E3A5D /* CircleChartViewChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartViewChartView.swift; sourceTree = "<group>"; };
 		B2869CA324A5A42F009E3A5D /* CircleChartView_LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartView_LegendView.swift; sourceTree = "<group>"; };
+		B2869CA824A63AE7009E3A5D /* BarChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartView.xib; sourceTree = "<group>"; };
+		B288873A24B67D8500689879 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		B288873C24B6809A00689879 /* BarChartView_ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView_ChartView.swift; sourceTree = "<group>"; };
+		B288873E24B75B6700689879 /* BarChartView_YLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView_YLabelView.swift; sourceTree = "<group>"; };
+		B288874024B75B7D00689879 /* BarChartView_XLableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView_XLableView.swift; sourceTree = "<group>"; };
 		B29049D224855E7200DA9569 /* BenefitManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BenefitManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29049D524855E7200DA9569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B29049D724855E7500DA9569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,6 +249,18 @@
 			path = CircleChartView;
 			sourceTree = "<group>";
 		};
+		B2869CA724A63AA9009E3A5D /* SingleBarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				B2869CA824A63AE7009E3A5D /* BarChartView.xib */,
+				B288873C24B6809A00689879 /* BarChartView_ChartView.swift */,
+				B288873E24B75B6700689879 /* BarChartView_YLabelView.swift */,
+				B288874024B75B7D00689879 /* BarChartView_XLableView.swift */,
+				B288873A24B67D8500689879 /* BarChartView.swift */,
+			);
+			path = SingleBarChartView;
+			sourceTree = "<group>";
+		};
 		B29049C924855E7200DA9569 = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +333,7 @@
 		B2904A0D2485658300DA9569 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				B2869CA724A63AA9009E3A5D /* SingleBarChartView */,
 				B2869CA524A63638009E3A5D /* CircleChartView */,
 			);
 			path = Charts;
@@ -386,7 +411,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Kohei Konishi";
 				TargetAttributes = {
 					B29049D124855E7200DA9569 = {
@@ -434,6 +459,7 @@
 				B29049DB24855E7500DA9569 /* MainWindow.xib in Resources */,
 				B2904A1C2485F48A00DA9569 /* MenuTableItemView.xib in Resources */,
 				B2904A0024855EEA00DA9569 /* OverviewViewLayout.xib in Resources */,
+				B2869CA924A63AE7009E3A5D /* BarChartView.xib in Resources */,
 				B235D3AC248DD36E00B42348 /* CircleChartVeiwLayout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B288873F24B75B6700689879 /* BarChartView_YLabelView.swift in Sources */,
 				B29049D624855E7200DA9569 /* AppDelegate.swift in Sources */,
 				B255C7A1248709E500CF21A1 /* JournalViewController.swift in Sources */,
 				B26DBB842488834C00661B1C /* FileExporter.swift in Sources */,
@@ -472,7 +499,9 @@
 				B255C7A72487382400CF21A1 /* ItemEditorViewController.swift in Sources */,
 				B26DBB832488834C00661B1C /* FileImporter.swift in Sources */,
 				B255C7B42487486E00CF21A1 /* Transaction.swift in Sources */,
+				B288873D24B6809A00689879 /* BarChartView_ChartView.swift in Sources */,
 				B24CBCDA2490DD89006AA41A /* WeeklyTransactionAnalyzer.swift in Sources */,
+				B288874124B75B7D00689879 /* BarChartView_XLableView.swift in Sources */,
 				B2869CA424A5A42F009E3A5D /* CircleChartView_LegendView.swift in Sources */,
 				B255C7AA24873A6200CF21A1 /* ItemEditorWindowController.swift in Sources */,
 				B255C7992487087E00CF21A1 /* StatisticsViewController.swift in Sources */,
@@ -484,6 +513,7 @@
 				B26DBB6B2488628000661B1C /* IFileExportable.swift in Sources */,
 				B255C7B02487480D00CF21A1 /* TransactionDataBase.swift in Sources */,
 				B2904A0F2485B93600DA9569 /* MainViewController.swift in Sources */,
+				B288873B24B67D8500689879 /* BarChartView.swift in Sources */,
 				B2904A072485627100DA9569 /* OverviewViewController.swift in Sources */,
 				B2904A202485F56E00DA9569 /* MenuTableItemViewController.swift in Sources */,
 				B235D39B248C4A5400B42348 /* TransactionDataBaseConfigurator.swift in Sources */,
@@ -513,6 +543,7 @@
 				B2904A042485622100DA9569 /* CircleChartView.swift in Sources */,
 				B235D3A6248C66E000B42348 /* ImportData.swift in Sources */,
 				B235D3A8248C66E500B42348 /* FileExporter.swift in Sources */,
+				B2421D7324A885BE00EA5950 /* CircleChartView_LegendView.swift in Sources */,
 				B2869CA224A56D54009E3A5D /* CircleChartViewChartView.swift in Sources */,
 				B235D39D248C5C9E00B42348 /* PaymentMethod.swift in Sources */,
 				B235D3A9248C66EB00B42348 /* FileImportable.swift in Sources */,
@@ -525,6 +556,7 @@
 			files = (
 				B2869CA124A56D30009E3A5D /* CircleChartViewChartView.swift in Sources */,
 				B29049F224855E7500DA9569 /* BenefitManagerUITests.swift in Sources */,
+				B2421D7424A885BF00EA5950 /* CircleChartView_LegendView.swift in Sources */,
 				B2904A052485622100DA9569 /* CircleChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +706,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BenefitManager/BenefitManager.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GM36ZRA62C;
@@ -694,6 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BenefitManager/BenefitManager.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GM36ZRA62C;

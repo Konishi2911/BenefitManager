@@ -84,7 +84,7 @@ class CircleChartView: NSView, CAAnimationDelegate {
     }
     private func loadNib() {
         if let success = NSNib(nibNamed: "CircleChartVeiwLayout", bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil), success {
-                        
+                                    
             chartView?.frame = CGRect(x: 0, y: 0,
                                       width: self.frame.width * chartLegendRatio,
                                       height: self.frame.height)
@@ -120,131 +120,6 @@ class CircleChartView: NSView, CAAnimationDelegate {
                               width: legendWidth,
                               height: self.bounds.height
         )
-    }
-    
-    private func setUpLegendLayer() {
-        legendLayer.frame = legendRegion
-        legendLayer.backgroundColor = .clear
-        legendLayer.autoresizingMask = .init(
-            arrayLiteral:
-            .layerHeightSizable,
-            .layerWidthSizable
-        )
-        self.layer?.addSublayer(legendLayer)
-        legendLayer.actions = [
-            "bounds": NSNull(),
-            "frame": NSNull(),
-            "contents": NSNull(),
-            "position": NSNull(),
-            "transform": NSNull()
-        ]
-
-    }
-    private func setUpLegendItemLayers() {
-        let margineLeftside: CGFloat = 20
-        let margineTop: CGFloat = 7
-        let iconSize: CGFloat = 15
-        let textMargineLeft: CGFloat = 10
-        let textHeight: CGFloat = 22
-        let detailMargineTop: CGFloat = 0
-        let detailMargineLeft: CGFloat = 14
-        let detailHeight: CGFloat = 20
-        let fontSize: CGFloat = 18
-        
-        let itemHeight: CGFloat = margineTop + textHeight + detailMargineTop + detailHeight
-        
-        var dataIterator: Int = 0
-        
-        // Remove Current ChartLAyer
-        for layer in self.legendIconLayers {
-            layer.removeFromSuperlayer()
-        }
-        for layer in self.legendTextLayers {
-            layer.removeFromSuperlayer()
-        }
-        for layer in self.legendDetailLayers {
-            layer.removeFromSuperlayer()
-        }
-        legendIconLayers.removeAll()
-        legendTextLayers.removeAll()
-        legendDetailLayers.removeAll()
-        
-        for value in self.ratioSource {
-            // ignore the data if it is zero
-            if value == 0 { continue }
-            
-            // Legend Icon
-            let iconLayer = CALayer()
-            iconLayer.opacity = 1
-            iconLayer.frame = CGRect(x: CGFloat(margineLeftside),
-                                     y: legendLayer.bounds.height * 0.8
-                                        - CGFloat(Double(dataIterator) + 0.5) * itemHeight
-                                        - (iconSize + margineTop) * 0.5,
-                                     width: iconSize,
-                                     height: iconSize)
-            // Legend Text
-            let textLayer = CATextLayer()
-            textLayer.foregroundColor = NSColor.textColor.cgColor
-            textLayer.frame = CGRect(x: CGFloat(margineLeftside + iconSize + textMargineLeft),
-                                     y: legendLayer.bounds.height * 0.8
-                                        - CGFloat(dataIterator + 1) * itemHeight
-                                        + detailHeight + detailMargineTop,
-                                     width: legendLayer.bounds.width - 50,
-                                     height: textHeight)
-            textLayer.fontSize = fontSize
-            
-            // Legend Details
-            let detailLayer = CATextLayer()
-            detailLayer.foregroundColor = NSColor.darkGray.cgColor
-            detailLayer.frame = CGRect(x: CGFloat(margineLeftside + iconSize + detailMargineLeft),
-                                     y: legendLayer.bounds.height * 0.8
-                                        - CGFloat(dataIterator + 1) * itemHeight,
-                                     width: legendLayer.bounds.width - 50,
-                                     height: detailHeight * 0.8)
-            detailLayer.fontSize = fontSize * 0.8
-            
-            // Set Legend Title
-            if itemsNameSource.count > dataIterator {
-                textLayer.string = itemsNameSource[dataIterator]
-            } else {
-                textLayer.string = "items\(dataIterator + 1)"
-            }
-            // Set Detail Datas
-            if ratioSource.count > dataIterator {
-                detailLayer.string = String(format: "%.1f", (ratioSource[dataIterator] * 1000).rounded() * 0.1)
-                    + " %  |  ¥\(dataSource[dataIterator])"
-            } else {
-                detailLayer.string = "---"
-            }
-            
-            // Set Chart Color
-            if dataIterator >= colorSet.count { dataIterator = 0 }
-            iconLayer.backgroundColor = colorSet[dataIterator].cgColor
-            dataIterator += 1
-            
-            iconLayer.actions = [
-                "bounds": NSNull(),
-                "frame": NSNull(),
-                "contents": NSNull(),
-                "position": NSNull(),
-                "transform": NSNull(),
-                "lineWidth": NSNull()
-            ]
-            textLayer.actions = [
-                "bounds": NSNull(),
-                "frame": NSNull(),
-                "contents": NSNull(),
-                "position": NSNull(),
-            ]
-
-            // Add tempLayers to Collection
-            self.legendIconLayers.append(iconLayer)
-            self.legendTextLayers.append(textLayer)
-            self.legendDetailLayers.append(detailLayer)
-            legendLayer.addSublayer(iconLayer)
-            legendLayer.addSublayer(textLayer)
-            legendLayer.addSublayer(detailLayer)
-        }
     }
     private func setUpTitleLayer() {
         titleLayer.frame = CGRect(x: 0,

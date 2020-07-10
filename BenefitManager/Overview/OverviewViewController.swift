@@ -18,6 +18,8 @@ class OverviewViewController: NSViewController {
     @IBOutlet weak var rangeSelector: NSPopUpButtonCell!
     @IBOutlet weak var circleChartView: CircleChartView!
     @IBOutlet weak var circleChartViewArea: NSBox!
+    @IBOutlet weak var barChartView: BarChartView!
+    
     
     private let extractionRange = [
         "this week",
@@ -36,6 +38,7 @@ class OverviewViewController: NSViewController {
         
         initialize()
         initializeCircleChart()
+        initializeBarChart()
                 
         self.transactionAnalyzer = TransactionDataBase.analyzer(
             identifier: TransactionDataBaseConfigurator.dataBaseName
@@ -50,6 +53,12 @@ class OverviewViewController: NSViewController {
     func initializeCircleChart() {
         circleChartView.setTitle("test")
         circleChartView.setValues(source: [5.5, 2.3])
+    }
+    func initializeBarChart() {
+        barChartView.minY = 0;
+        barChartView.maxY = 10;
+        barChartView.stepsY = 4;
+        barChartView.setDataSource(from: [5.5, 2.3, 8.2, 3, 2.1, 9.4, 9.0, 2.1])
     }
     func setExtractionRange() {
         switch rangeSelector.titleOfSelectedItem ?? "" {
