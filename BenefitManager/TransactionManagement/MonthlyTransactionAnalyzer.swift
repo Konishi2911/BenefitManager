@@ -48,4 +48,27 @@ struct MonthlyTransactionAnalyzer: PeriodicTransactionAnalyzer {
         
         return amountsBreakdown(from: startDate, to: endDate, type: tType)
     }
+    
+    func getDayList() -> [String] {
+        return getDayList(of: Calendar.current.startOfDay(for: Date()))
+    }
+    func getDayList(of refDate: Date) -> [String] {
+        let day = Calendar.current.component(.day, from: refDate)
+        let lastday = Calendar.current.range(of: .day, in: .month, for: refDate)!.upperBound
+        let startDate: Date = Calendar.current.date(byAdding: .day, value: -day, to: refDate)!
+        let endDate: Date = Calendar.current.date(byAdding: .day, value: lastday - day, to: refDate)!
+        
+        return getDayList(from: startDate, to: endDate)
+    }
+    func amountsBreakdownByDay(type tType: AccountsTitle.TransactionType) -> [Int] {
+        amountsBreakdownByDay(of: Calendar.current.startOfDay(for: Date()), type: tType)
+    }
+    func amountsBreakdownByDay(of refDate: Date, type tType: AccountsTitle.TransactionType) -> [Int] {
+        let day = Calendar.current.component(.day, from: refDate)
+        let lastday = Calendar.current.range(of: .day, in: .month, for: refDate)!.upperBound
+        let startDate: Date = Calendar.current.date(byAdding: .day, value: -day, to: refDate)!
+        let endDate: Date = Calendar.current.date(byAdding: .day, value: lastday - day, to: refDate)!
+        
+        return amountsBreakdownByDay(from: startDate, to: endDate, type: tType);
+    }
 }

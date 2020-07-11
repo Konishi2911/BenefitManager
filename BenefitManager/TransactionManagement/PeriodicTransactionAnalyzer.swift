@@ -19,6 +19,7 @@ protocol PeriodicTransactionAnalyzer {
     func headersBreakdown(type tType: AccountsTitle.TransactionType) -> [String]
     /// Returns the latest amouts breakdown during the ranges of each implementation.
     func amountsBreakdown(type tType: AccountsTitle.TransactionType) -> [Int]
+    func amountsBreakdownByDay(type tType: AccountsTitle.TransactionType) -> [Int]
 }
 extension PeriodicTransactionAnalyzer {
     func totalAmounts(from startDate: Date, to endDate: Date, type tType: AccountsTitle.TransactionType) -> Int {
@@ -67,6 +68,50 @@ extension PeriodicTransactionAnalyzer {
             i += 1
         }
         return transactionAmounts
+    }
+    func getDayList(from startDate: Date, to endDate: Date) -> [String] {
+        var dateVal: [String] = []
+        var current: Date = startDate
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "dd", options: 0, locale: Locale.current)
+        
+        while(true) {
+            if current > endDate { break }
+            dateVal.append(
+                dateFormatter.string(from: current)
+            )
+            current = Calendar.current.date(byAdding: .day, value: 1, to: current)!
+        }
+        
+        return dateVal
+    }
+    func amountsBreakdownByDay(from startDate: Date, to endDate: Date, type tType: AccountsTitle.TransactionType) -> [Int] {
+        var amountsByDay: [Int] = []
+        let transactions = extractTransactions(from: startDate, to: endDate, type: tType)
+        
+        var date = startDate;
+        while(true) {
+            // Avoid this roop if reached endDate
+            if date > endDate { break }
+            
+            // tempolary variable that is sum of amounts by day
+            var tempAmounts: Int = 0
+            
+            print("=== amountBreakdownByDay ===")
+            
+            for transaction in transactions {
+                print("target date: \(date), transaction date: \(transaction.date)")
+                if transaction.date == date {
+                    tempAmounts += transaction.amounts * transaction.pieces;
+                }
+            }
+            amountsByDay.append(tempAmounts);
+            
+            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+        }
+        
+        return amountsByDay;
     }
     func extractTransactions(from startDate: Date, to endDate: Date, type tType: AccountsTitle.TransactionType) -> [Transaction] {
         var Transactions: [Transaction] = []

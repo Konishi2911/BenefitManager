@@ -49,37 +49,40 @@ class BenefitManagerTests: XCTestCase {
         TransactionDataBase.createNewDataBase(identifier: dataBaseName)
         let database = TransactionDataBase.getInstance(identifier: dataBaseName)!
         
+        let calender = Calendar.current;
+        let today = calender.startOfDay(for: Date())
+        
         database.transactions = [
             Transaction.init(title: AccountsTitle.init(title: "Foods"),
-                            date: Date(),
+                             date: calender.date(byAdding: .day, value: -2, to: today)!,
                             name: "TestMock1",
                             pieces: 2,
                             amounts: 400,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
             Transaction.init(title: AccountsTitle.init(title: "Foods"),
-                            date: Date(),
+                            date: calender.date(byAdding: .day, value: -6, to: today)!,
                             name: "TestMock2",
                             pieces: 1,
                             amounts: 140,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
             Transaction.init(title: AccountsTitle.init(title: "Gas"),
-                            date: Date(),
+                            date: calender.date(byAdding: .day, value: -2, to: today)!,
                             name: "TestMock2",
                             pieces: 1,
                             amounts: 2000,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
             Transaction.init(title: AccountsTitle.init(title: "Detergents"),
-                            date: Date(),
+                            date: calender.date(byAdding: .day, value: -1, to: today)!,
                             name: "TestMock2",
                             pieces: 1,
                             amounts: 2600,
                             paymentMethod: PaymentMethod.cash,
                             remarks: ""),
             Transaction.init(title: AccountsTitle.init(title: "Miscellaneous"),
-                            date: Date(),
+                            date: calender.date(byAdding: .day, value: -5, to: today)!,
                             name: "TestMock2",
                             pieces: 1,
                             amounts: 1000,
@@ -92,6 +95,9 @@ class BenefitManagerTests: XCTestCase {
         XCTAssertEqual(analyzer.week.totalAmounts(type: .Expense), 6540)
         XCTAssertEqual(analyzer.week.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
         XCTAssertEqual(analyzer.week.amountsBreakdown(type: .Expense), [940, 2000, 3600])
+        XCTAssertEqual(analyzer.week.amountsBreakdownByDay(type: .Expense),
+                       [140, 1000, 0, 0, 2800, 2600, 0])
+
         XCTAssertEqual(analyzer.month.totalAmounts(type: .Expense), 6540)
         XCTAssertEqual(analyzer.month.headersBreakdown(type: .Expense), ["Food", "Utilities", "Daily Uses"])
         XCTAssertEqual(analyzer.month.amountsBreakdown(type: .Expense), [940, 2000, 3600])

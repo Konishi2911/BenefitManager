@@ -44,7 +44,7 @@ struct Transaction {
     }
     init (title actsTitle: AccountsTitle, date _date: Date, name _name: String, pieces _pieces: Int, amounts _amounts: Int, paymentMethod pMethod: PaymentMethod, remarks _remarks: String) {
         accountsTitle = actsTitle
-        date = _date
+        date = Calendar.current.startOfDay(for: _date)
         name = _name
         pieces = _pieces
         amounts = _amounts

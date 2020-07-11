@@ -24,7 +24,7 @@ class BarChartView_ChartView: NSView {
     private var axisLineWidth: CGFloat = 1;
     
     // Chart
-    private let chartWidth: CGFloat = 15
+    private let chartWidth: CGFloat = 5
     private let chartColor: CGColor = NSColor.yellow.cgColor;
     
     var seriesData: [Double] = []
@@ -162,6 +162,11 @@ class BarChartView_ChartView: NSView {
         let chartBar = CGMutablePath();
         var i = 1;
         for data in seriesData {
+            if data == 0 {
+                i += 1
+                continue
+            }
+            
             chartBar.move(to: CGPoint(x: xInterval * CGFloat(i),
                                       y: chartWidth / 2));
             chartBar.addLine(
@@ -182,6 +187,11 @@ class BarChartView_ChartView: NSView {
         let shadowBar = CGMutablePath();
         var i = 1;
         for data in seriesData {
+            if data == 0 {
+                i += 1
+                continue
+            }
+            
             shadowBar.move(to: CGPoint(x: margine + xInterval * CGFloat(i),
                                       y: margine + chartWidth / 2));
             shadowBar.addLine(

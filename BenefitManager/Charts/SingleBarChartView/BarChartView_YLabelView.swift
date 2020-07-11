@@ -71,6 +71,7 @@ class BarChartView_YLabelView: NSView {
             
             tempLayer.backgroundColor = .clear
             
+            tempLayer.alignmentMode = .right
             tempLayer.fontSize = fontSize
             tempLayer.foregroundColor = textColor
             tempLayer.frame = CGRect(x: 0, y: CGFloat(i) * yInterval - 0.5 * labelHeight,

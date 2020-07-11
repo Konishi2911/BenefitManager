@@ -55,6 +55,7 @@ class OverviewViewController: NSViewController {
         circleChartView.setValues(source: [5.5, 2.3])
     }
     func initializeBarChart() {
+        barChartView.enableAutoAdjustYScale = true
         barChartView.minY = 0;
         barChartView.maxY = 10;
         barChartView.stepsY = 4;
@@ -65,13 +66,21 @@ class OverviewViewController: NSViewController {
         case "this week":
             expensesIndicater.stringValue
                 = "¥ " + String(transactionAnalyzer.week.totalAmounts(type: .Expense))
+            
             circleChartView.setValues(source: transactionAnalyzer.week.amountsBreakdown(type: .Expense))
             circleChartView.setItemNames(source: transactionAnalyzer.week.headersBreakdown(type: .Expense))
+            
+            barChartView.setDataSource(from: transactionAnalyzer.week.amountsBreakdownByDay(type: .Expense))
+            barChartView.setSeriesNameSource(from: transactionAnalyzer.week.getDayList())
         case "this month":
             expensesIndicater.stringValue
                 = "¥ " + String(transactionAnalyzer.month.totalAmounts(type: .Expense))
+            
             circleChartView.setValues(source: transactionAnalyzer.month.amountsBreakdown(type: .Expense))
             circleChartView.setItemNames(source: transactionAnalyzer.month.headersBreakdown(type: .Expense))
+            
+            barChartView.setDataSource(from: transactionAnalyzer.month.amountsBreakdownByDay(type: .Expense))
+            barChartView.setSeriesNameSource(from: transactionAnalyzer.month.getDayList())
         default:
             break
         }
